@@ -50,5 +50,12 @@ namespace MemoryClient
             RegistryScreen screen = new RegistryScreen(Client);
             screen.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainScreen main = new MainScreen(Client);
+            main.ShowDialog();
+        }
     }
 }

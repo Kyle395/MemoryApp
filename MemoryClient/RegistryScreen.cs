@@ -14,6 +14,7 @@ namespace MemoryClient
     public partial class RegistryScreen : Form
     {
         TcpClient Client;
+        NetworkStream stream;
         public RegistryScreen(TcpClient Client)
         {
             this.Client = Client;

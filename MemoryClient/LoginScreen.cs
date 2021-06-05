@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,30 +15,34 @@ namespace MemoryClient
 {
     public partial class LoginScreen : Form
     {
-        TcpClient Client = new TcpClient();
+        
+        TcpClient client;
+        NetworkStream stream;
+
         public LoginScreen()
         {
-            Client = new TcpClient();
-
             try
             {
-                Client.Connect("127.0.0.1", 1111);
+                client = new TcpClient();
+                client.Connect("127.0.0.1", 8080);
+                stream = client.GetStream();
 
-                if (Client.Connected)
+                if (client.Connected)
                 {
                     InitializeComponent();
                 }
             }
-
             catch (Exception e)
             {
                 MessageBox.Show("Couldn't connect to the server. Please try again.");
+                this.Close();
             }
+
         }
+
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,18 +50,34 @@ namespace MemoryClient
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegistryScreen screen = new RegistryScreen(Client);
-            screen.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainScreen main = new MainScreen(Client);
-            main.ShowDialog();
+            string test =texBoxLogin.Text;
+            byte[] message = Encoding.ASCII.GetBytes(test);
+            stream.Write(message, 0, message.Length);
+        }
+
+        private void discBtn_Click(object sender, EventArgs e)
+        {
+        }
+        static string Hash(string password)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var sb = new StringBuilder(hash.Length * 2);
+
+                foreach (byte b in hash)
+                {
+                    sb.Append(b.ToString("X2"));
+                }
+
+                return sb.ToString();
+            }
         }
     }
 }

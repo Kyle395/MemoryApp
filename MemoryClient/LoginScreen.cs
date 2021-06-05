@@ -15,7 +15,6 @@ namespace MemoryClient
 {
     public partial class LoginScreen : Form
     {
-        
         TcpClient client;
         NetworkStream stream;
 
@@ -52,17 +51,57 @@ namespace MemoryClient
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            RegistryScreen registryScreen = new RegistryScreen(client);
+            registryScreen.ShowDialog();
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string test =texBoxLogin.Text;
-            byte[] message = Encoding.ASCII.GetBytes(test);
-            stream.Write(message, 0, message.Length);
+            write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text)+"\r\n");
         }
 
         private void discBtn_Click(object sender, EventArgs e)
         {
+            client.Close();
+            this.Close();
+        }
+       
+        #region dataTransmission
+        public string read()
+        {
+            byte[] buffer = new byte[1024];
+            try
+            {
+                int message_size = stream.Read(buffer, 0, 1024);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+            }
+            string s = System.Text.Encoding.UTF8.GetString(buffer);
+            s = s.Replace("\0", "");
+            return s;
+        }
+
+        public void write(string toWrite)
+        {
+            byte[] buffer = ASCIIEncoding.UTF8.GetBytes(toWrite);
+            try
+            {
+                stream.Write(buffer, 0, buffer.Length);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+
+        public string[] checkMessage(string s)
+        {
+            return s.Split(' ');
         }
         static string Hash(string password)
         {
@@ -79,5 +118,6 @@ namespace MemoryClient
                 return sb.ToString();
             }
         }
+        #endregion
     }
 }

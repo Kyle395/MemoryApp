@@ -31,10 +31,12 @@ namespace MemoryClient
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.texBoxLogin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxPass2 = new System.Windows.Forms.TextBox();
+            this.regBtn = new System.Windows.Forms.Button();
+            this.cnlBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -55,19 +57,19 @@ namespace MemoryClient
             this.label1.TabIndex = 6;
             this.label1.Text = "Username: ";
             // 
-            // textBox2
+            // textBoxPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxPass.Location = new System.Drawing.Point(171, 95);
+            this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPass.TabIndex = 5;
             // 
-            // textBox1
+            // texBoxLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.texBoxLogin.Location = new System.Drawing.Point(171, 54);
+            this.texBoxLogin.Name = "texBoxLogin";
+            this.texBoxLogin.Size = new System.Drawing.Size(100, 20);
+            this.texBoxLogin.TabIndex = 4;
             // 
             // label3
             // 
@@ -78,24 +80,46 @@ namespace MemoryClient
             this.label3.TabIndex = 9;
             this.label3.Text = "Repeat Password: ";
             // 
-            // textBox3
+            // textBoxPass2
             // 
-            this.textBox3.Location = new System.Drawing.Point(171, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.textBoxPass2.Location = new System.Drawing.Point(171, 130);
+            this.textBoxPass2.Name = "textBoxPass2";
+            this.textBoxPass2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPass2.TabIndex = 8;
+            // 
+            // regBtn
+            // 
+            this.regBtn.Location = new System.Drawing.Point(171, 171);
+            this.regBtn.Name = "regBtn";
+            this.regBtn.Size = new System.Drawing.Size(75, 23);
+            this.regBtn.TabIndex = 10;
+            this.regBtn.Text = "Register";
+            this.regBtn.UseVisualStyleBackColor = true;
+            this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
+            // 
+            // cnlBtn
+            // 
+            this.cnlBtn.Location = new System.Drawing.Point(267, 171);
+            this.cnlBtn.Name = "cnlBtn";
+            this.cnlBtn.Size = new System.Drawing.Size(75, 23);
+            this.cnlBtn.TabIndex = 11;
+            this.cnlBtn.Text = "Cancel";
+            this.cnlBtn.UseVisualStyleBackColor = true;
+            this.cnlBtn.Click += new System.EventHandler(this.cnlBtn_Click);
             // 
             // RegistryScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 216);
+            this.Controls.Add(this.cnlBtn);
+            this.Controls.Add(this.regBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxPass2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPass);
+            this.Controls.Add(this.texBoxLogin);
             this.Name = "RegistryScreen";
             this.Text = "RegistryScreen";
             this.ResumeLayout(false);
@@ -107,9 +131,11 @@ namespace MemoryClient
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPass;
+        private System.Windows.Forms.TextBox texBoxLogin;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxPass2;
+        private System.Windows.Forms.Button regBtn;
+        private System.Windows.Forms.Button cnlBtn;
     }
 }

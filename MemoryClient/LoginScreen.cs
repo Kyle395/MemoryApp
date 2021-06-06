@@ -60,6 +60,16 @@ namespace MemoryClient
         private void Button1_Click(object sender, EventArgs e)
         {
             write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text)+"\r\n");
+            if (read() == "1\r\n")
+            {
+                this.Hide();
+                MainScreen mainScreen = new MainScreen(client, texBoxLogin.Text);
+                mainScreen.ShowDialog();
+            }
+            else if (read() == "!\r\n")
+            {
+                MessageBox.Show("Wrong username or password");
+            }
         }
 
         private void discBtn_Click(object sender, EventArgs e)

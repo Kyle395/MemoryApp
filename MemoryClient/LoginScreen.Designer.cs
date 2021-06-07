@@ -115,6 +115,7 @@ namespace MemoryClient
             this.Controls.Add(this.texBoxLogin);
             this.Name = "LoginScreen";
             this.Text = "LoginScreen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginScreen_FormClosing);
             this.Load += new System.EventHandler(this.LoginScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

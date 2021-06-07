@@ -3,6 +3,7 @@ using System.Net.Sockets;
 using System.Text;
 using Microsoft.VisualBasic;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MemoryClient
 {
@@ -76,7 +77,7 @@ namespace MemoryClient
         {
             dataGridView1.Rows.Clear();
             string[] data;
-            var index = this.dataGridView1.Rows.Add();
+            var index = 0; //this.dataGridView1.Rows.Add();
             write("ref\r\n");
             data = checkMessage(read());
 
@@ -88,6 +89,14 @@ namespace MemoryClient
                 {
                     index = this.dataGridView1.Rows.Add();
                     j = 0;
+                }
+                else if(data[i]=="~")
+                {
+                    MessageBox.Show("No rooms found");
+                }
+                else if(data[i]=="end")
+                {
+                    break;
                 }
                 else
                 {
@@ -136,6 +145,12 @@ namespace MemoryClient
             write("logout\r\n");
             this.Hide();
 
+        }
+
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            write("logout");            
+            Application.Exit();
         }
     }
 }

@@ -186,6 +186,7 @@ namespace MemoryClient
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

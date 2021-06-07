@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,7 +24,7 @@ namespace MemoryClient
             try
             {
                 client = new TcpClient();
-                client.Connect("127.0.0.1", 2048);
+                client.Connect("127.0.0.1", 8080);
                 stream = client.GetStream();
 
                 if (client.Connected)
@@ -130,5 +131,11 @@ namespace MemoryClient
             }
         }
         #endregion
+
+        private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            write("logout");            
+            Application.Exit();
+        }
     }
 }

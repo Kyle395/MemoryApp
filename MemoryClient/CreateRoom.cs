@@ -32,9 +32,7 @@ namespace MemoryClient
                 else MessageBox.Show("Write your password you moron");
             }
             else write("crm " + isPrivate.Checked.ToString()+"\r\n");
-
-
-           MessageBox.Show("Room created with id: " + read()); ;
+            
             this.Close();
         }
 

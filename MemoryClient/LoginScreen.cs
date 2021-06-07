@@ -134,7 +134,7 @@ namespace MemoryClient
 
         private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            write("logout");            
+            write("logout\r\n");            
             Application.Exit();
         }
     }

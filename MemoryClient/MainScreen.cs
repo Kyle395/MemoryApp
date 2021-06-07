@@ -77,27 +77,25 @@ namespace MemoryClient
         {
             dataGridView1.Rows.Clear();
             string[] data;
-            var index = 0; //this.dataGridView1.Rows.Add();
+            var index = 0; 
             write("ref\r\n");
             data = checkMessage(read());
 
             int j = 0;
-
+            int numberOfRows = int.Parse(data[0]);
+            this.dataGridView1.RowCount = numberOfRows;
             for (int i = 1; i < data.Length; i++)
             {
+                
                 if (data[i] == "/")
                 {
-                    index = this.dataGridView1.Rows.Add();
+                    index++;
                     j = 0;
                 }
                 else if(data[i]=="~")
                 {
                     MessageBox.Show("No rooms found");
-                }
-                else if(data[i]=="end")
-                {
-                    break;
-                }
+                }               
                 else
                 {
                     this.dataGridView1.Rows[index].Cells[j].Value = data[i];
@@ -149,7 +147,7 @@ namespace MemoryClient
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            write("logout");            
+            write("logout\r\n");
             Application.Exit();
         }
     }

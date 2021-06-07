@@ -1,7 +1,7 @@
 ﻿
 namespace MemoryClient
 {
-    partial class GameScreen
+    partial class SingleGameScreen
     {
         /// <summary>
         /// Required designer variable.

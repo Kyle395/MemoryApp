@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MemoryClient
 {
-    public partial class GameScreen : Form
+    public partial class SingleGameScreen : Form
     {
 
         bool allowClick = false;
@@ -21,7 +21,7 @@ namespace MemoryClient
         Timer timer = new Timer { Interval = 1000 };
 
 
-        public GameScreen()
+        public SingleGameScreen()
         {
             InitializeComponent();
         }

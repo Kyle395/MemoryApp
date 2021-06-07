@@ -30,12 +30,16 @@ namespace MemoryClient
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPrivate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Players = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.begun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.clsBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.createBtn = new System.Windows.Forms.Button();
             this.joinRoomBtn = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,10 +49,39 @@ namespace MemoryClient
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.isPrivate,
+            this.Players,
+            this.begun});
             this.dataGridView1.Location = new System.Drawing.Point(133, 60);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(571, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 156);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // isPrivate
+            // 
+            this.isPrivate.HeaderText = "isPrivate";
+            this.isPrivate.Name = "isPrivate";
+            this.isPrivate.ReadOnly = true;
+            // 
+            // Players
+            // 
+            this.Players.HeaderText = "Players";
+            this.Players.Name = "Players";
+            this.Players.ReadOnly = true;
+            // 
+            // begun
+            // 
+            this.begun.HeaderText = "Game started";
+            this.begun.Name = "begun";
+            this.begun.ReadOnly = true;
             // 
             // label1
             // 
@@ -61,7 +94,7 @@ namespace MemoryClient
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(522, 354);
+            this.button2.Location = new System.Drawing.Point(133, 245);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 3;
@@ -71,25 +104,27 @@ namespace MemoryClient
             // 
             // clsBtn
             // 
-            this.clsBtn.Location = new System.Drawing.Point(629, 415);
+            this.clsBtn.Location = new System.Drawing.Point(645, 296);
             this.clsBtn.Name = "clsBtn";
             this.clsBtn.Size = new System.Drawing.Size(75, 23);
             this.clsBtn.TabIndex = 4;
             this.clsBtn.Text = "Close";
             this.clsBtn.UseVisualStyleBackColor = true;
+            this.clsBtn.Click += new System.EventHandler(this.clsBtn_Click);
             // 
             // logoutBtn
             // 
-            this.logoutBtn.Location = new System.Drawing.Point(537, 415);
+            this.logoutBtn.Location = new System.Drawing.Point(564, 296);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(75, 23);
             this.logoutBtn.TabIndex = 5;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(711, 60);
+            this.refreshBtn.Location = new System.Drawing.Point(609, 60);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(75, 23);
             this.refreshBtn.TabIndex = 6;
@@ -97,20 +132,21 @@ namespace MemoryClient
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
-            // button3
+            // createBtn
             // 
-            this.button3.Location = new System.Drawing.Point(711, 100);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Create a room";
-            this.button3.UseVisualStyleBackColor = true;
+            this.createBtn.Location = new System.Drawing.Point(609, 99);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(96, 23);
+            this.createBtn.TabIndex = 7;
+            this.createBtn.Text = "Create a room";
+            this.createBtn.UseVisualStyleBackColor = true;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // joinRoomBtn
             // 
-            this.joinRoomBtn.Location = new System.Drawing.Point(711, 139);
+            this.joinRoomBtn.Location = new System.Drawing.Point(609, 140);
             this.joinRoomBtn.Name = "joinRoomBtn";
-            this.joinRoomBtn.Size = new System.Drawing.Size(75, 23);
+            this.joinRoomBtn.Size = new System.Drawing.Size(85, 23);
             this.joinRoomBtn.TabIndex = 8;
             this.joinRoomBtn.Text = "Join room";
             this.joinRoomBtn.UseVisualStyleBackColor = true;
@@ -137,11 +173,11 @@ namespace MemoryClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 475);
+            this.ClientSize = new System.Drawing.Size(732, 331);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.joinRoomBtn);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.createBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.clsBtn);
@@ -165,9 +201,13 @@ namespace MemoryClient
         private System.Windows.Forms.Button clsBtn;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button joinRoomBtn;
         private System.Windows.Forms.Label txtUsername;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isPrivate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Players;
+        private System.Windows.Forms.DataGridViewTextBoxColumn begun;
     }
 }

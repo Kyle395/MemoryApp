@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Text;
+using Microsoft.VisualBasic;
 using System.Windows.Forms;
 
 namespace MemoryClient
@@ -21,7 +22,7 @@ namespace MemoryClient
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            GameScreen game = new GameScreen();
+            SingleGameScreen game = new SingleGameScreen();
             game.ShowDialog();
         }
 
@@ -31,13 +32,7 @@ namespace MemoryClient
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
-            dataGridView1.Columns[0].Name = "Id";
-            dataGridView1.Columns[1].Name = "is Private";
-            dataGridView1.Columns[2].Name = "Players";
-            dataGridView1.Columns[3].Name = "Game in progress";
-
-            
-           }
+        }
         #region dataTransmission
             public string read()
         {
@@ -51,6 +46,7 @@ namespace MemoryClient
                 Console.Write(e);
             }
             string s = System.Text.Encoding.UTF8.GetString(buffer);
+            stream.Flush();
             s = s.Replace("\0", "");
             return s;
         }
@@ -61,6 +57,7 @@ namespace MemoryClient
             try
             {
                 stream.Write(buffer, 0, buffer.Length);
+                stream.Flush();
             }
             catch (Exception e)
             {
@@ -77,21 +74,27 @@ namespace MemoryClient
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            
+            dataGridView1.Rows.Clear();
             string[] data;
             var index = this.dataGridView1.Rows.Add();
             write("ref\r\n");
-            while (true) 
+            data = checkMessage(read());
+
+            int j = 0;
+
+            for (int i = 1; i < data.Length; i++)
             {
-                int j = 0;
-                data = checkMessage(read());
-                for(int i = 1; i < 5; i++)
+                if (data[i] == "/")
+                {
+                    index = this.dataGridView1.Rows.Add();
+                    j = 0;
+                }
+                else
                 {
                     this.dataGridView1.Rows[index].Cells[j].Value = data[i];
                     j++;
                 }
-                if(data[5] != "end\r\n") break;
-            } 
+            }
         }
 
         private void joinRoomBtn_Click(object sender, EventArgs e)
@@ -100,8 +103,38 @@ namespace MemoryClient
             {
                 int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                string isPrivate = Convert.ToString(selectedRow.Cells[2].Value);
                 string cellValue = Convert.ToString(selectedRow.Cells["Id"].Value);
+                if (isPrivate=="True")
+                {
+                    object pass = Interaction.InputBox("Password");
+                    write(pass.ToString());
+                    if (read() == "!\r\n")
+                    {
+                        Microsoft.VisualBasic.Interaction.MsgBox("Wrong password", MsgBoxStyle.OkOnly);
+                    }
+                    else Microsoft.VisualBasic.Interaction.MsgBox("Correct", MsgBoxStyle.OkOnly);
+                }
             }
+
+        }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            CreateRoom createRoom = new CreateRoom(Client);
+            createRoom.ShowDialog();
+        }
+
+        private void clsBtn_Click(object sender, EventArgs e)
+        {
+            write("logout\r\n");
+            this.Close();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            write("logout\r\n");
+            this.Hide();
 
         }
     }

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NetCoreServer">
       <HintPath>..\..\..\lib\net5.0\NetCoreServer.dll</HintPath>
     </Reference>
@@ -49,11 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameScreen.cs">
+    <Compile Include="CreateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameScreen.Designer.cs">
-      <DependentUpon>GameScreen.cs</DependentUpon>
+    <Compile Include="CreateRoom.Designer.cs">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiGameScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiGameScreen.Designer.cs">
+      <DependentUpon>MultiGameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordScreen.Designer.cs">
+      <DependentUpon>PasswordScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleGameScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleGameScreen.Designer.cs">
+      <DependentUpon>SingleGameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyScreen.Designer.cs">
+      <DependentUpon>LobbyScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -75,8 +100,20 @@
     <Compile Include="RegistryScreen.Designer.cs">
       <DependentUpon>RegistryScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GameScreen.resx">
-      <DependentUpon>GameScreen.cs</DependentUpon>
+    <EmbeddedResource Include="CreateRoom.resx">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiGameScreen.resx">
+      <DependentUpon>MultiGameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordScreen.resx">
+      <DependentUpon>PasswordScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleGameScreen.resx">
+      <DependentUpon>SingleGameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyScreen.resx">
+      <DependentUpon>LobbyScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
@@ -136,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\question.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default picturer.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

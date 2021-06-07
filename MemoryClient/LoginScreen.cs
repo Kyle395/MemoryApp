@@ -23,7 +23,7 @@ namespace MemoryClient
             try
             {
                 client = new TcpClient();
-                client.Connect("127.0.0.1", 8080);
+                client.Connect("127.0.0.1", 2048);
                 stream = client.GetStream();
 
                 if (client.Connected)
@@ -70,6 +70,7 @@ namespace MemoryClient
             {
                 MessageBox.Show("Wrong username or password");
             }
+
         }
 
         private void discBtn_Click(object sender, EventArgs e)

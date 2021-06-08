@@ -112,17 +112,22 @@ namespace MemoryClient
             {
                 int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                string isPrivate = Convert.ToString(selectedRow.Cells[2].Value);
+                string isPrivate = Convert.ToString(selectedRow.Cells[1].Value);
                 string cellValue = Convert.ToString(selectedRow.Cells["Id"].Value);
                 if (isPrivate=="True")
                 {
-                    object pass = Interaction.InputBox("Password");
-                    write(pass.ToString());
-                    if (read() == "!")
+                    string content = Interaction.InputBox("Enter Password: ", "Password","password", 500, 300);
+                    if (content != "")
                     {
-                        Microsoft.VisualBasic.Interaction.MsgBox("Wrong password", MsgBoxStyle.OkOnly);
+                        write("jrm " + cellValue + " " + username + " " + content);
+                        if (read() == "ok")
+                        {
+                            this.Hide();
+                            LobbyScreen lobbyScreen = new LobbyScreen();
+                            lobbyScreen.ShowDialog();
+                        }
                     }
-                    else Microsoft.VisualBasic.Interaction.MsgBox("Correct", MsgBoxStyle.OkOnly);
+                    else MessageBox.Show("write password");
                 }
             }
 

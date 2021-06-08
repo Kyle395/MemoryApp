@@ -22,7 +22,7 @@ namespace MemoryClient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SingleGameScreen game = new SingleGameScreen();
             game.ShowDialog();
         }
@@ -78,12 +78,14 @@ namespace MemoryClient
             dataGridView1.Rows.Clear();
             string[] data;
             var index = 0; 
-            write("ref\r\n");
+            write("ref");            
             data = checkMessage(read());
 
             int j = 0;
+             
             int numberOfRows = int.Parse(data[0]);
             this.dataGridView1.RowCount = numberOfRows;
+            
             for (int i = 1; i < data.Length; i++)
             {
                 
@@ -116,7 +118,7 @@ namespace MemoryClient
                 {
                     object pass = Interaction.InputBox("Password");
                     write(pass.ToString());
-                    if (read() == "!\r\n")
+                    if (read() == "!")
                     {
                         Microsoft.VisualBasic.Interaction.MsgBox("Wrong password", MsgBoxStyle.OkOnly);
                     }
@@ -134,20 +136,20 @@ namespace MemoryClient
 
         private void clsBtn_Click(object sender, EventArgs e)
         {
-            write("logout\r\n");
+            write("logout");
             this.Close();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            write("logout\r\n");
+            write("logout");
             this.Hide();
 
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            write("logout\r\n");
+            write("logout");
             Application.Exit();
         }
     }

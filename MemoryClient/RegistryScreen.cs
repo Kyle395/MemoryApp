@@ -85,8 +85,8 @@ namespace MemoryClient
         {
             if (textBoxPass.Text == textBoxPass2.Text)
             {
-                write("reg " + texBoxLogin.Text + " " + Hash(texBoxLogin.Text+textBoxPass.Text) + "\r\n");
-                if (read() == "1\r\n")
+                write("reg " + texBoxLogin.Text + " " + Hash(texBoxLogin.Text+textBoxPass.Text));
+                if (read() == "1")
                 {
                     MessageBox.Show("Succesfully registered");
                     this.Hide();

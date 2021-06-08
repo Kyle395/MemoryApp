@@ -60,14 +60,14 @@ namespace MemoryClient
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text)+"\r\n");
-            if (read() == "1\r\n")
+            write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text));
+            if (read() == "1")
             {
                 this.Hide();
                 MainScreen mainScreen = new MainScreen(client, texBoxLogin.Text);
                 mainScreen.ShowDialog();
             }
-            else if (read() == "!\r\n")
+            else if (read() == "!")
             {
                 MessageBox.Show("Wrong username or password");
             }
@@ -134,7 +134,7 @@ namespace MemoryClient
 
         private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            write("logout\r\n");            
+            write("logout");            
             Application.Exit();
         }
     }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace MemoryClient
 {
+    using static CommProtocol;
     public partial class CreateRoom : Form
     {
         TcpClient Client;
@@ -43,37 +44,7 @@ namespace MemoryClient
             this.Close();
         }
         #region dataTransmission
-        public string read()
-        {
-            byte[] buffer = new byte[1024];
-            try
-            {
-                int message_size = stream.Read(buffer, 0, 1024);
-            }
-            catch (Exception e)
-            {
-                Console.Write(e);
-            }
-            string s = System.Text.Encoding.UTF8.GetString(buffer);
-            stream.Flush();
-            s = s.Replace("\0", "");
-            return s;
-        }
-
-        public void write(string toWrite)
-        {
-            byte[] buffer = ASCIIEncoding.UTF8.GetBytes(toWrite);
-            try
-            {
-                stream.Write(buffer, 0, buffer.Length);
-            }
-            catch (Exception e)
-            {
-
-            }
-
-        }
-
+        
         public string[] checkMessage(string s)
         {
             return s.Split(' ');

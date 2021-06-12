@@ -7,6 +7,7 @@ using System.Threading;
 
 namespace MemoryClient
 {
+    using static CommProtocol;
     public partial class MainScreen : Form
     {
         TcpClient Client;
@@ -35,37 +36,7 @@ namespace MemoryClient
             dataGridView1.ColumnCount = 4;
         }
         #region dataTransmission
-            public string read()
-        {
-            byte[] buffer = new byte[1024];
-            try
-            {
-                int message_size = stream.Read(buffer, 0, 1024);
-            }
-            catch (Exception e)
-            {
-                Console.Write(e);
-            }
-            string s = System.Text.Encoding.UTF8.GetString(buffer);
-            stream.Flush();
-            s = s.Replace("\0", "");
-            return s;
-        }
-
-        public void write(string toWrite)
-        {
-            byte[] buffer = ASCIIEncoding.UTF8.GetBytes(toWrite);
-            try
-            {
-                stream.Write(buffer, 0, buffer.Length);
-                stream.Flush();
-            }
-            catch (Exception e)
-            {
-
-            }
-
-        }
+           
 
         public string[] checkMessage(string s)
         {
@@ -82,9 +53,11 @@ namespace MemoryClient
             data = checkMessage(read());
 
             int j = 0;
-             
-            int numberOfRows = int.Parse(data[0]);
-            this.dataGridView1.RowCount = numberOfRows;
+            if (data.Length > 1)
+            {
+                int numberOfRows = int.Parse(data[0]);
+                this.dataGridView1.RowCount = numberOfRows;
+            }
             
             for (int i = 1; i < data.Length; i++)
             {

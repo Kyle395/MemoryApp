@@ -60,6 +60,7 @@ namespace MemoryClient
             this.label = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
             this.txtRoomId = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -137,144 +138,160 @@ namespace MemoryClient
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(513, 463);
+            this.pictureBox13.Location = new System.Drawing.Point(510, 410);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 48;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(372, 463);
+            this.pictureBox14.Location = new System.Drawing.Point(369, 410);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 47;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(226, 463);
+            this.pictureBox15.Location = new System.Drawing.Point(223, 410);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 46;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(79, 463);
+            this.pictureBox16.Location = new System.Drawing.Point(76, 410);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 45;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(513, 357);
+            this.pictureBox9.Location = new System.Drawing.Point(510, 304);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 44;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(372, 357);
+            this.pictureBox10.Location = new System.Drawing.Point(369, 304);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 43;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(226, 357);
+            this.pictureBox11.Location = new System.Drawing.Point(223, 304);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 42;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(79, 357);
+            this.pictureBox12.Location = new System.Drawing.Point(76, 304);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 41;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(513, 251);
+            this.pictureBox5.Location = new System.Drawing.Point(510, 198);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 40;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(372, 251);
+            this.pictureBox6.Location = new System.Drawing.Point(369, 198);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 39;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(226, 251);
+            this.pictureBox7.Location = new System.Drawing.Point(223, 198);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 38;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(79, 251);
+            this.pictureBox8.Location = new System.Drawing.Point(76, 198);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 37;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(513, 145);
+            this.pictureBox4.Location = new System.Drawing.Point(510, 92);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(372, 145);
+            this.pictureBox3.Location = new System.Drawing.Point(369, 92);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(226, 145);
+            this.pictureBox2.Location = new System.Drawing.Point(223, 92);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.clickImage);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(79, 145);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.clickImage);
@@ -337,11 +354,26 @@ namespace MemoryClient
             this.txtRoomId.Size = new System.Drawing.Size(0, 13);
             this.txtRoomId.TabIndex = 54;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Default",
+            "Gołe baby",
+            "Szybkie auta",
+            "seksowni goście"});
+            this.comboBox1.Location = new System.Drawing.Point(648, 291);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 55;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // LobbyScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 653);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtRoomId);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label);
@@ -423,5 +455,6 @@ namespace MemoryClient
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label txtUsername;
         private System.Windows.Forms.Label txtRoomId;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

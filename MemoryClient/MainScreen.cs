@@ -35,21 +35,12 @@ namespace MemoryClient
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
         }
-        #region dataTransmission
-
-
-        public string[] checkMessage(string s)
-        {
-            return s.Split(' ');
-        }
-        #endregion
-
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
 
             write("ref");
-            string[] data = checkMessage(read());
+            string[] data = CheckMessage(read());
 
 
             int x = 0;

@@ -165,10 +165,7 @@
     <None Include="Resources\img8.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\question.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\default picturer.jpg" />
+    <None Include="Resources\question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

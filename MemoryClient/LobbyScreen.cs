@@ -27,8 +27,7 @@ namespace MemoryClient
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-
-        private static IEnumerable<Image> images
+        private static Image[] images
         {
             get
             {
@@ -47,7 +46,6 @@ namespace MemoryClient
         }
         private void SetImages()
         {
-            Image[] array = images.ToArray();
             for (int i = 0; i < 16; i++)
             {
                 pictureBoxes[i].Visible = true;
@@ -61,7 +59,7 @@ namespace MemoryClient
                 }
                 else
                 {
-                    pictureBoxes[i].Image = array[gs.board[i]];
+                    pictureBoxes[i].Image = images[gs.board[i]];
                 }
             }
         }
@@ -147,6 +145,11 @@ namespace MemoryClient
                 CommProtocol.write("ready false");
             }
             PullState();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

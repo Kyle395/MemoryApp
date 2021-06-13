@@ -22,13 +22,6 @@ namespace MemoryClient
             stream = client.GetStream();
             InitializeComponent();
         }
-        #region dataTransmission
-        public string[] checkMessage(string s)
-        {
-            return s.Split(' ');
-        }
-        #endregion
-
         private void confirmBtn_Click(object sender, EventArgs e)
         {
             write(txtPass.Text);

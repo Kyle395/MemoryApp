@@ -50,12 +50,5 @@ namespace MemoryClient
         {
             this.Close();
         }
-        #region dataTransmission
-        
-        public string[] checkMessage(string s)
-        {
-            return s.Split(' ');
-        }
-        #endregion
     }
 }

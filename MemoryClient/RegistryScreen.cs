@@ -17,13 +17,6 @@ namespace MemoryClient
     {
         TcpClient client;
         NetworkStream stream;
-        #region dataTransmission
-       
-
-        public string[] checkMessage(string s)
-        {
-            return s.Split(' ');
-        }
         static string Hash(string password)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
@@ -39,7 +32,6 @@ namespace MemoryClient
                 return sb.ToString();
             }
         }
-        #endregion
         public RegistryScreen(TcpClient Client)
         {
             this.client = Client;

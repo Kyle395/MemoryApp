@@ -87,12 +87,9 @@ namespace MemoryClient
                     if (content != "")
                     {
                         write("jrm " + cellValue + " " + username + " " + content);
-                        if (read() == "ok")
-                        {
-                            this.Hide();
-                            LobbyScreen lobbyScreen = new LobbyScreen();
-                            lobbyScreen.ShowDialog();
-                        }
+                        this.Hide();
+                        LobbyScreen lobbyScreen = new LobbyScreen();
+                        lobbyScreen.ShowDialog();
                     }
                     else MessageBox.Show("write password");
                 }

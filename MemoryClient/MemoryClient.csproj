@@ -57,12 +57,7 @@
     <Compile Include="CreateRoom.Designer.cs">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="MultiGameScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MultiGameScreen.Designer.cs">
-      <DependentUpon>MultiGameScreen.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GameState.cs" />
     <Compile Include="PasswordScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,9 +98,6 @@
     </Compile>
     <EmbeddedResource Include="CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MultiGameScreen.resx">
-      <DependentUpon>MultiGameScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordScreen.resx">
       <DependentUpon>PasswordScreen.cs</DependentUpon>

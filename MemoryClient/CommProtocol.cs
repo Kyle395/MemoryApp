@@ -35,5 +35,9 @@ namespace MemoryClient
                 sw.WriteLine(msg);
             }
         }
+        public static string[] CheckMessage(string sData)
+        {
+            return sData.Split(' ');
+        }
     }
 }

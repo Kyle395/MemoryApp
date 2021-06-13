@@ -64,13 +64,14 @@ namespace MemoryClient
         private void Button1_Click(object sender, EventArgs e)
         {
             write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text));
-            if (read() == "1")
+            string msg = read();
+            if (msg == "1")
             {
                 this.Hide();
                 MainScreen mainScreen = new MainScreen(client, texBoxLogin.Text);
                 mainScreen.ShowDialog();
             }
-            else if (read() == "!")
+            else if (msg == "!")
             {
                 MessageBox.Show("Wrong username or password");
             }
@@ -82,13 +83,7 @@ namespace MemoryClient
             client.Close();
             this.Close();
         }
-       
-        #region dataTransmission
         
-        public string[] checkMessage(string s)
-        {
-            return s.Split(' ');
-        }
         static string Hash(string password)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
@@ -104,7 +99,6 @@ namespace MemoryClient
                 return sb.ToString();
             }
         }
-        #endregion
 
         private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
         {

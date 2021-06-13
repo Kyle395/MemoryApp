@@ -56,7 +56,7 @@ namespace MemoryClient
 
         private void regBtn_Click(object sender, EventArgs e)
         {
-            if (textBoxPass.Text == textBoxPass2.Text)
+            if (textBoxPass.Text == textBoxPass2.Text && textBoxPass.Text.Length<15)
             {
                 write("reg " + texBoxLogin.Text + " " + Hash(texBoxLogin.Text+textBoxPass.Text));
                 if (read() == "1")

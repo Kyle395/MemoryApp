@@ -25,14 +25,21 @@ namespace MemoryClient
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            if (isPrivate.Checked) {
-                if (textBox3.Text.Length!=0)
+            if (isPrivate.Checked)
+            {
+                char[] vs = textBox3.Text.ToCharArray();
+                for (int i = 0; i < vs.Length; i++)
                 {
-                  write("crm " + isPrivate.Checked.ToString() + " " + textBox3.Text + "\r\n");
+                    if (vs[i].ToString() == " ")
+                    {
+                        MessageBox.Show("o ty zlosliwa swinko, usun spacje w hasle");
+                        textBox3.Clear();
+                        return;
+                    }
                 }
-                else MessageBox.Show("Write your password you moron");
+                write("crm " + isPrivate.Checked.ToString() + " " + textBox3.Text);
             }
-            else write("crm " + isPrivate.Checked.ToString()+"\r\n");
+            else write("crm " + isPrivate.Checked.ToString() + " ");
 
 
             MessageBox.Show("Room created with id: " + read());

@@ -29,7 +29,7 @@ namespace MemoryClient
         /// </summary>
         private void InitializeComponent()
         {
-            this.rdyBtn = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.table1 = new System.Windows.Forms.DataGridView();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,13 @@ namespace MemoryClient
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNickname = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.Label();
+            this.txtRoomId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -71,16 +78,6 @@ namespace MemoryClient
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rdyBtn
-            // 
-            this.rdyBtn.Location = new System.Drawing.Point(952, 27);
-            this.rdyBtn.Name = "rdyBtn";
-            this.rdyBtn.Size = new System.Drawing.Size(75, 23);
-            this.rdyBtn.TabIndex = 0;
-            this.rdyBtn.Text = "Ready";
-            this.rdyBtn.UseVisualStyleBackColor = true;
-            this.rdyBtn.Click += new System.EventHandler(this.rdyBtn_Click);
             // 
             // table1
             // 
@@ -282,11 +279,75 @@ namespace MemoryClient
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.clickImage);
             // 
+            // timer
+            // 
+            this.timer.Interval = 50;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(645, 251);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "It\'s your move: ";
+            // 
+            // txtNickname
+            // 
+            this.txtNickname.AutoSize = true;
+            this.txtNickname.Location = new System.Drawing.Point(741, 251);
+            this.txtNickname.Name = "txtNickname";
+            this.txtNickname.Size = new System.Drawing.Size(0, 13);
+            this.txtNickname.TabIndex = 50;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(664, 199);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(57, 17);
+            this.checkBox1.TabIndex = 51;
+            this.checkBox1.Text = "Ready";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(660, 13);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(61, 13);
+            this.label.TabIndex = 52;
+            this.label.Text = "Username: ";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Location = new System.Drawing.Point(731, 13);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(0, 13);
+            this.txtUsername.TabIndex = 53;
+            // 
+            // txtRoomId
+            // 
+            this.txtRoomId.AutoSize = true;
+            this.txtRoomId.Location = new System.Drawing.Point(731, 32);
+            this.txtRoomId.Name = "txtRoomId";
+            this.txtRoomId.Size = new System.Drawing.Size(0, 13);
+            this.txtRoomId.TabIndex = 54;
+            // 
             // LobbyScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 653);
+            this.Controls.Add(this.txtRoomId);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtNickname);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox15);
@@ -306,7 +367,6 @@ namespace MemoryClient
             this.Controls.Add(this.label1);
             this.Controls.Add(this.leaveBtn);
             this.Controls.Add(this.table1);
-            this.Controls.Add(this.rdyBtn);
             this.Name = "LobbyScreen";
             this.Text = "LobbyScreen";
             this.Load += new System.EventHandler(this.LobbyScreen_Load);
@@ -333,8 +393,6 @@ namespace MemoryClient
         }
 
         #endregion
-
-        private System.Windows.Forms.Button rdyBtn;
         private System.Windows.Forms.DataGridView table1;
         private System.Windows.Forms.Button leaveBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
@@ -358,5 +416,12 @@ namespace MemoryClient
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtNickname;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label txtUsername;
+        private System.Windows.Forms.Label txtRoomId;
     }
 }

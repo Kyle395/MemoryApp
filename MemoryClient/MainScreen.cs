@@ -30,7 +30,7 @@ namespace MemoryClient
 
         private void MainScreen_Load(object sender, EventArgs e)
         {
-            txtUsername.Text = username;
+            txtUsername.Text = username; 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
@@ -84,17 +84,50 @@ namespace MemoryClient
                 if (isPrivate == "True")
                 {
                     string content = Interaction.InputBox("Enter Password: ", "Password", "password", 500, 300);
-                    if (content != "")
+                    char[] vs = content.ToCharArray();
+                    for (int i = 0; i < vs.Length; i++)
                     {
-                        write("jrm " + cellValue + " " + username + " " + content);
+                        if(vs[i].ToString()==" ")
+                        {
+                            MessageBox.Show("Type password without spaces");
+                            return;
+                        }
+                    }
+                    write("jrm " + cellValue + " " + username + " " + content);
+                    string msg = CommProtocol.read();
+                    if (msg == "ok")
+                    {
                         this.Hide();
-                        LobbyScreen lobbyScreen = new LobbyScreen();
+                        LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
                         lobbyScreen.ShowDialog();
                     }
-                    else MessageBox.Show("write password");
+                    else if (msg == "error 1")
+                    {
+                        MessageBox.Show("Wrong password");
+                    }
+                    else if (msg =="error 2")
+                    {
+                        MessageBox.Show("Selected room is full");
+                    }
+                }
+                else
+                {
+                    write("jrm " + cellValue + " " + username + " ");
+                    string msg = CommProtocol.read();
+
+                    if (msg == "ok")
+                    {
+                        this.Hide();
+                        LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
+                        lobbyScreen.ShowDialog();
+                    }
+                    else if (msg == "error 2")
+                    {
+                        MessageBox.Show("Selected room is full");
+                    }
+                    else MessageBox.Show(msg);
                 }
             }
-
         }
 
         private void createBtn_Click(object sender, EventArgs e)

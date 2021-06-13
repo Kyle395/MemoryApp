@@ -36,7 +36,7 @@ namespace MemoryClient
             dataGridView1.ColumnCount = 4;
         }
         #region dataTransmission
-           
+
 
         public string[] checkMessage(string s)
         {
@@ -47,34 +47,28 @@ namespace MemoryClient
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            string[] data;
-            var index = 0; 
-            write("ref");            
-            data = checkMessage(read());
 
-            int j = 0;
-            if (data.Length > 1)
+            write("ref");
+            string[] data = checkMessage(read());
+
+
+            int x = 0;
+            int numberOfRows = int.Parse(data[x++]);
+
+            if (numberOfRows != 0)
             {
-                int numberOfRows = int.Parse(data[0]);
                 this.dataGridView1.RowCount = numberOfRows;
             }
-            
-            for (int i = 1; i < data.Length; i++)
+            else
             {
-                
-                if (data[i] == "/")
+                MessageBox.Show("No rooms found");
+            }
+
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < 4; j++)
                 {
-                    index++;
-                    j = 0;
-                }
-                else if(data[i]=="~")
-                {
-                    MessageBox.Show("No rooms found");
-                }               
-                else
-                {
-                    this.dataGridView1.Rows[index].Cells[j].Value = data[i];
-                    j++;
+                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
                 }
             }
         }
@@ -87,9 +81,9 @@ namespace MemoryClient
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
                 string isPrivate = Convert.ToString(selectedRow.Cells[1].Value);
                 string cellValue = Convert.ToString(selectedRow.Cells["Id"].Value);
-                if (isPrivate=="True")
+                if (isPrivate == "True")
                 {
-                    string content = Interaction.InputBox("Enter Password: ", "Password","password", 500, 300);
+                    string content = Interaction.InputBox("Enter Password: ", "Password", "password", 500, 300);
                     if (content != "")
                     {
                         write("jrm " + cellValue + " " + username + " " + content);

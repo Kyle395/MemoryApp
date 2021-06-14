@@ -15,6 +15,7 @@ namespace MemoryClient
         GameState gs = new GameState();
         string username;
         string RoomId;
+        string previousWinnerString = "";
         MainScreen mainScreen;
         public LobbyScreen(MainScreen mainScreen, string username, string RoomId)
         {
@@ -70,16 +71,7 @@ namespace MemoryClient
             if (logData[0] == "game")
             {
                 gs.Decode(logData.Skip(1).ToArray());
-                testowyLabel.Text = gs.winners.Count.ToString();
-                if (gs.winners.Count > 0)
-                {
-                    string winners = null;
-                    for (int i = 0; i < gs.winners.Count; i++)
-                    {
-                        winners += gs.winners[i].ToString() + ", ";
-                    }
-                    MessageBox.Show("game won by: " + winners);
-                }
+
             }
             else MessageBox.Show("PullState error");
             RefreshDisplay();
@@ -100,6 +92,21 @@ namespace MemoryClient
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.connected;
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.score;
             }
+            testowyLabel.Text = gs.winners.Count.ToString();
+            if (gs.winners.Count > 0)
+            {
+                string winners = "";
+                for (int i = 0; i < gs.winners.Count; i++)
+                {
+                    winners += gs.winners[i].ToString() + ", ";
+                }
+                if (winners != previousWinnerString)
+                {
+                    testowyLabel.Text = "And the winner is: " + winners;
+                    previousWinnerString = winners;
+                }
+            }
+            checkBox1.CheckState = gs.players[username].ready ? CheckState.Checked : CheckState.Unchecked;
             SetImages();
         }
 

@@ -82,8 +82,10 @@ namespace MemoryClient
             {
                 txtNickname.Text = gs.playerOrder[gs.activePlayer];
             }
-            table1.Rows.Clear();
-            table1.RowCount = gs.playerOrder.Count;
+            if (gs.playerOrder.Count != 0)
+            {
+                table1.RowCount = gs.playerOrder.Count;
+            }
             for (int i = 0; i < gs.playerOrder.Count; i++)
             {
                 int j = 0;
@@ -150,7 +152,6 @@ namespace MemoryClient
             CommProtocol.write("noop");
             PullState();
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -162,16 +163,6 @@ namespace MemoryClient
                 CommProtocol.write("ready false");
             }
             PullState();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void testowyLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

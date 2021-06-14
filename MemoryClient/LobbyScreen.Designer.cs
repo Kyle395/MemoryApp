@@ -31,10 +31,6 @@ namespace MemoryClient
         {
             this.components = new System.ComponentModel.Container();
             this.table1 = new System.Windows.Forms.DataGridView();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Connected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaveBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -60,7 +56,11 @@ namespace MemoryClient
             this.label = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
             this.txtRoomId = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Connected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testowyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -88,40 +88,17 @@ namespace MemoryClient
             this.isReady,
             this.Connected,
             this.Score});
-            this.table1.Location = new System.Drawing.Point(664, 56);
+            this.table1.Location = new System.Drawing.Point(554, 92);
             this.table1.Name = "table1";
             this.table1.Size = new System.Drawing.Size(444, 136);
             this.table1.TabIndex = 1;
             // 
-            // Login
-            // 
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            // 
-            // isReady
-            // 
-            this.isReady.HeaderText = "isReady";
-            this.isReady.Name = "isReady";
-            this.isReady.ReadOnly = true;
-            // 
-            // Connected
-            // 
-            this.Connected.HeaderText = "Connected";
-            this.Connected.Name = "Connected";
-            this.Connected.ReadOnly = true;
-            // 
-            // Score
-            // 
-            this.Score.HeaderText = "Score";
-            this.Score.Name = "Score";
-            this.Score.ReadOnly = true;
-            // 
             // leaveBtn
             // 
-            this.leaveBtn.Location = new System.Drawing.Point(1033, 27);
+            this.leaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaveBtn.Location = new System.Drawing.Point(916, 49);
             this.leaveBtn.Name = "leaveBtn";
-            this.leaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.leaveBtn.Size = new System.Drawing.Size(93, 32);
             this.leaveBtn.TabIndex = 2;
             this.leaveBtn.Text = "Leave";
             this.leaveBtn.UseVisualStyleBackColor = true;
@@ -130,15 +107,16 @@ namespace MemoryClient
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(661, 32);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(565, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Room Id: ";
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(510, 410);
+            this.pictureBox13.Location = new System.Drawing.Point(310, 410);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(100, 100);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +126,7 @@ namespace MemoryClient
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(369, 410);
+            this.pictureBox14.Location = new System.Drawing.Point(416, 410);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(100, 100);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,7 +136,7 @@ namespace MemoryClient
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(223, 410);
+            this.pictureBox15.Location = new System.Drawing.Point(204, 410);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(100, 100);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,7 +146,7 @@ namespace MemoryClient
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(76, 410);
+            this.pictureBox16.Location = new System.Drawing.Point(98, 410);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(100, 100);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +156,7 @@ namespace MemoryClient
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(510, 304);
+            this.pictureBox9.Location = new System.Drawing.Point(416, 304);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(100, 100);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,7 +166,7 @@ namespace MemoryClient
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(369, 304);
+            this.pictureBox10.Location = new System.Drawing.Point(310, 304);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(100, 100);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +176,7 @@ namespace MemoryClient
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(223, 304);
+            this.pictureBox11.Location = new System.Drawing.Point(204, 304);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(100, 100);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +186,7 @@ namespace MemoryClient
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(76, 304);
+            this.pictureBox12.Location = new System.Drawing.Point(98, 304);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(100, 100);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,7 +196,7 @@ namespace MemoryClient
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(510, 198);
+            this.pictureBox5.Location = new System.Drawing.Point(416, 198);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 100);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -228,7 +206,7 @@ namespace MemoryClient
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(369, 198);
+            this.pictureBox6.Location = new System.Drawing.Point(310, 198);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 100);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,7 +216,7 @@ namespace MemoryClient
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(223, 198);
+            this.pictureBox7.Location = new System.Drawing.Point(204, 198);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 100);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +226,7 @@ namespace MemoryClient
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(76, 198);
+            this.pictureBox8.Location = new System.Drawing.Point(98, 198);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 100);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -258,7 +236,7 @@ namespace MemoryClient
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(510, 92);
+            this.pictureBox4.Location = new System.Drawing.Point(416, 92);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -268,7 +246,7 @@ namespace MemoryClient
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(369, 92);
+            this.pictureBox3.Location = new System.Drawing.Point(310, 92);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,7 +256,7 @@ namespace MemoryClient
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(223, 92);
+            this.pictureBox2.Location = new System.Drawing.Point(204, 92);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -288,7 +266,7 @@ namespace MemoryClient
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(76, 92);
+            this.pictureBox1.Location = new System.Drawing.Point(98, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -304,26 +282,29 @@ namespace MemoryClient
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(645, 251);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(550, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 49;
             this.label2.Text = "It\'s your move: ";
             // 
             // txtNickname
             // 
             this.txtNickname.AutoSize = true;
-            this.txtNickname.Location = new System.Drawing.Point(741, 251);
+            this.txtNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNickname.Location = new System.Drawing.Point(670, 278);
             this.txtNickname.Name = "txtNickname";
-            this.txtNickname.Size = new System.Drawing.Size(0, 13);
+            this.txtNickname.Size = new System.Drawing.Size(0, 20);
             this.txtNickname.TabIndex = 50;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(664, 199);
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(565, 234);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(57, 17);
+            this.checkBox1.Size = new System.Drawing.Size(74, 24);
             this.checkBox1.TabIndex = 51;
             this.checkBox1.Text = "Ready";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -332,48 +313,75 @@ namespace MemoryClient
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(660, 13);
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(564, 39);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(61, 13);
+            this.label.Size = new System.Drawing.Size(91, 20);
             this.label.TabIndex = 52;
             this.label.Text = "Username: ";
             // 
             // txtUsername
             // 
             this.txtUsername.AutoSize = true;
-            this.txtUsername.Location = new System.Drawing.Point(731, 13);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(668, 39);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(0, 13);
+            this.txtUsername.Size = new System.Drawing.Size(0, 20);
             this.txtUsername.TabIndex = 53;
             // 
             // txtRoomId
             // 
             this.txtRoomId.AutoSize = true;
-            this.txtRoomId.Location = new System.Drawing.Point(731, 32);
+            this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomId.Location = new System.Drawing.Point(669, 66);
             this.txtRoomId.Name = "txtRoomId";
-            this.txtRoomId.Size = new System.Drawing.Size(0, 13);
+            this.txtRoomId.Size = new System.Drawing.Size(0, 20);
             this.txtRoomId.TabIndex = 54;
             // 
-            // comboBox1
+            // Login
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Default",
-            "Gołe baby",
-            "Szybkie auta",
-            "seksowni goście"});
-            this.comboBox1.Location = new System.Drawing.Point(648, 291);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 55;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // isReady
+            // 
+            this.isReady.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isReady.HeaderText = "isReady";
+            this.isReady.Name = "isReady";
+            this.isReady.ReadOnly = true;
+            // 
+            // Connected
+            // 
+            this.Connected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Connected.HeaderText = "Connected";
+            this.Connected.Name = "Connected";
+            this.Connected.ReadOnly = true;
+            // 
+            // Score
+            // 
+            this.Score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score.HeaderText = "Score";
+            this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
+            // 
+            // testowyLabel
+            // 
+            this.testowyLabel.AutoSize = true;
+            this.testowyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testowyLabel.Location = new System.Drawing.Point(560, 390);
+            this.testowyLabel.Name = "testowyLabel";
+            this.testowyLabel.Size = new System.Drawing.Size(138, 25);
+            this.testowyLabel.TabIndex = 55;
+            this.testowyLabel.Text = "testowyLabel";
             // 
             // LobbyScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 653);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1027, 572);
+            this.Controls.Add(this.testowyLabel);
             this.Controls.Add(this.txtRoomId);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label);
@@ -427,11 +435,7 @@ namespace MemoryClient
         #endregion
         private System.Windows.Forms.DataGridView table1;
         private System.Windows.Forms.Button leaveBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isReady;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Connected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
@@ -455,6 +459,10 @@ namespace MemoryClient
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label txtUsername;
         private System.Windows.Forms.Label txtRoomId;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isReady;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Connected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.Label testowyLabel;
     }
 }

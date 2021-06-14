@@ -70,6 +70,16 @@ namespace MemoryClient
             if (logData[0] == "game")
             {
                 gs.Decode(logData.Skip(1).ToArray());
+                testowyLabel.Text = gs.winners.Count.ToString();
+                if (gs.winners.Count > 0)
+                {
+                    string winners = null;
+                    for (int i = 0; i < gs.winners.Count; i++)
+                    {
+                        winners += gs.winners[i].ToString() + ", ";
+                    }
+                    MessageBox.Show("game won by: " + winners);
+                }
             }
             else MessageBox.Show("PullState error");
             RefreshDisplay();
@@ -106,7 +116,7 @@ namespace MemoryClient
             }
             if (myID == -1)
             {
-                MessageBox.Show("to nie dziala");
+                MessageBox.Show("It doesn't work");
             }
 
             CommProtocol.write("move " + myID);

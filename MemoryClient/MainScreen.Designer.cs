@@ -34,7 +34,6 @@ namespace MemoryClient
             this.isPrivate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Players = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.begun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.clsBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
@@ -83,20 +82,12 @@ namespace MemoryClient
             this.begun.Name = "begun";
             this.begun.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Available rooms:";
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(133, 245);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(133, 222);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 39);
+            this.button2.Size = new System.Drawing.Size(100, 46);
             this.button2.TabIndex = 3;
             this.button2.Text = "Start solo game";
             this.button2.UseVisualStyleBackColor = true;
@@ -104,9 +95,10 @@ namespace MemoryClient
             // 
             // clsBtn
             // 
-            this.clsBtn.Location = new System.Drawing.Point(645, 296);
+            this.clsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clsBtn.Location = new System.Drawing.Point(639, 288);
             this.clsBtn.Name = "clsBtn";
-            this.clsBtn.Size = new System.Drawing.Size(75, 23);
+            this.clsBtn.Size = new System.Drawing.Size(81, 31);
             this.clsBtn.TabIndex = 4;
             this.clsBtn.Text = "Close";
             this.clsBtn.UseVisualStyleBackColor = true;
@@ -114,9 +106,10 @@ namespace MemoryClient
             // 
             // logoutBtn
             // 
-            this.logoutBtn.Location = new System.Drawing.Point(564, 296);
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Location = new System.Drawing.Point(536, 288);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(75, 23);
+            this.logoutBtn.Size = new System.Drawing.Size(78, 31);
             this.logoutBtn.TabIndex = 5;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = true;
@@ -124,6 +117,7 @@ namespace MemoryClient
             // 
             // refreshBtn
             // 
+            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.Location = new System.Drawing.Point(609, 60);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(75, 23);
@@ -134,9 +128,10 @@ namespace MemoryClient
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(609, 99);
+            this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createBtn.Location = new System.Drawing.Point(608, 89);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(96, 23);
+            this.createBtn.Size = new System.Drawing.Size(112, 45);
             this.createBtn.TabIndex = 7;
             this.createBtn.Text = "Create a room";
             this.createBtn.UseVisualStyleBackColor = true;
@@ -144,9 +139,10 @@ namespace MemoryClient
             // 
             // joinRoomBtn
             // 
+            this.joinRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.joinRoomBtn.Location = new System.Drawing.Point(609, 140);
             this.joinRoomBtn.Name = "joinRoomBtn";
-            this.joinRoomBtn.Size = new System.Drawing.Size(85, 23);
+            this.joinRoomBtn.Size = new System.Drawing.Size(75, 27);
             this.joinRoomBtn.TabIndex = 8;
             this.joinRoomBtn.Text = "Join room";
             this.joinRoomBtn.UseVisualStyleBackColor = true;
@@ -155,17 +151,19 @@ namespace MemoryClient
             // txtUsername
             // 
             this.txtUsername.AutoSize = true;
-            this.txtUsername.Location = new System.Drawing.Point(130, 19);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(246, 19);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(0, 13);
+            this.txtUsername.Size = new System.Drawing.Size(0, 20);
             this.txtUsername.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 19);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(129, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Welcome back ";
             // 
@@ -182,7 +180,6 @@ namespace MemoryClient
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.clsBtn);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
@@ -197,7 +194,6 @@ namespace MemoryClient
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button clsBtn;
         private System.Windows.Forms.Button logoutBtn;

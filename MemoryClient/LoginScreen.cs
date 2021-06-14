@@ -78,8 +78,8 @@ namespace MemoryClient
 
         private void discBtn_Click(object sender, EventArgs e)
         {
-            client.Close();
             this.Close();
+            client.Close();
         }
         
         static string Hash(string password)

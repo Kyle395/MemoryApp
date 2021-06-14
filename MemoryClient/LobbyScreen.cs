@@ -82,7 +82,7 @@ namespace MemoryClient
             {
                 txtNickname.Text = gs.playerOrder[gs.activePlayer];
             }
-            if (gs.playerOrder.Count>0)
+            if (gs.playerOrder.Count != 0)
             {
                 table1.RowCount = gs.playerOrder.Count;
             }
@@ -152,7 +152,6 @@ namespace MemoryClient
             CommProtocol.write("noop");
             PullState();
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -164,6 +163,6 @@ namespace MemoryClient
                 CommProtocol.write("ready false");
             }
             PullState();
-        }        
+        }
     }
 }

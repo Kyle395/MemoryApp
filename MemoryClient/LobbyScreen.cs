@@ -161,5 +161,10 @@ namespace MemoryClient
         {
 
         }
+
+        private void testowyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

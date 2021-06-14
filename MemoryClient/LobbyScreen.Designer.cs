@@ -31,6 +31,10 @@ namespace MemoryClient
         {
             this.components = new System.ComponentModel.Container();
             this.table1 = new System.Windows.Forms.DataGridView();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Connected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaveBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -56,10 +60,6 @@ namespace MemoryClient
             this.label = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
             this.txtRoomId = new System.Windows.Forms.Label();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Connected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.testowyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -92,6 +92,34 @@ namespace MemoryClient
             this.table1.Name = "table1";
             this.table1.Size = new System.Drawing.Size(444, 136);
             this.table1.TabIndex = 1;
+            // 
+            // Login
+            // 
+            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // isReady
+            // 
+            this.isReady.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isReady.HeaderText = "isReady";
+            this.isReady.Name = "isReady";
+            this.isReady.ReadOnly = true;
+            // 
+            // Connected
+            // 
+            this.Connected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Connected.HeaderText = "Connected";
+            this.Connected.Name = "Connected";
+            this.Connected.ReadOnly = true;
+            // 
+            // Score
+            // 
+            this.Score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score.HeaderText = "Score";
+            this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
             // 
             // leaveBtn
             // 
@@ -338,34 +366,6 @@ namespace MemoryClient
             this.txtRoomId.Size = new System.Drawing.Size(0, 20);
             this.txtRoomId.TabIndex = 54;
             // 
-            // Login
-            // 
-            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            // 
-            // isReady
-            // 
-            this.isReady.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isReady.HeaderText = "isReady";
-            this.isReady.Name = "isReady";
-            this.isReady.ReadOnly = true;
-            // 
-            // Connected
-            // 
-            this.Connected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Connected.HeaderText = "Connected";
-            this.Connected.Name = "Connected";
-            this.Connected.ReadOnly = true;
-            // 
-            // Score
-            // 
-            this.Score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Score.HeaderText = "Score";
-            this.Score.Name = "Score";
-            this.Score.ReadOnly = true;
-            // 
             // testowyLabel
             // 
             this.testowyLabel.AutoSize = true;
@@ -375,6 +375,7 @@ namespace MemoryClient
             this.testowyLabel.Size = new System.Drawing.Size(138, 25);
             this.testowyLabel.TabIndex = 55;
             this.testowyLabel.Text = "testowyLabel";
+            this.testowyLabel.Click += new System.EventHandler(this.testowyLabel_Click);
             // 
             // LobbyScreen
             // 

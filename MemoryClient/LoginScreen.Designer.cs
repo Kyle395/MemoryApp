@@ -40,16 +40,19 @@ namespace MemoryClient
             // 
             // texBoxLogin
             // 
+            this.texBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texBoxLogin.Location = new System.Drawing.Point(165, 53);
             this.texBoxLogin.Name = "texBoxLogin";
-            this.texBoxLogin.Size = new System.Drawing.Size(100, 20);
+            this.texBoxLogin.Size = new System.Drawing.Size(100, 22);
             this.texBoxLogin.TabIndex = 0;
             // 
             // textBoxPass
             // 
+            this.textBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPass.Location = new System.Drawing.Point(165, 94);
             this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPass.PasswordChar = '*';
+            this.textBoxPass.Size = new System.Drawing.Size(100, 22);
             this.textBoxPass.TabIndex = 1;
             // 
             // label1

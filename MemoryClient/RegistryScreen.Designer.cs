@@ -59,16 +59,19 @@ namespace MemoryClient
             // 
             // textBoxPass
             // 
+            this.textBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPass.Location = new System.Drawing.Point(171, 95);
             this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPass.PasswordChar = '*';
+            this.textBoxPass.Size = new System.Drawing.Size(100, 22);
             this.textBoxPass.TabIndex = 5;
             // 
             // texBoxLogin
             // 
+            this.texBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texBoxLogin.Location = new System.Drawing.Point(171, 54);
             this.texBoxLogin.Name = "texBoxLogin";
-            this.texBoxLogin.Size = new System.Drawing.Size(100, 20);
+            this.texBoxLogin.Size = new System.Drawing.Size(100, 22);
             this.texBoxLogin.TabIndex = 4;
             // 
             // label3
@@ -82,9 +85,11 @@ namespace MemoryClient
             // 
             // textBoxPass2
             // 
+            this.textBoxPass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPass2.Location = new System.Drawing.Point(171, 130);
             this.textBoxPass2.Name = "textBoxPass2";
-            this.textBoxPass2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPass2.PasswordChar = '*';
+            this.textBoxPass2.Size = new System.Drawing.Size(100, 22);
             this.textBoxPass2.TabIndex = 8;
             // 
             // regBtn

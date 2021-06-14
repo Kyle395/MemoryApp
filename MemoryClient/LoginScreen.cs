@@ -54,9 +54,8 @@ namespace MemoryClient
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegistryScreen registryScreen = new RegistryScreen(client);
+            RegistryScreen registryScreen = new RegistryScreen(client, this);
             registryScreen.ShowDialog();
-
         }
 
         private void Button1_Click(object sender, EventArgs e)

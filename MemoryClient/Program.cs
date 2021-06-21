@@ -11,9 +11,14 @@ namespace MemoryClient
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginScreen());
+            try 
+            { 
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginScreen());
+            }
+            catch(Exception e)
+            { MessageBox.Show("Something went wrong"); }
         }
     }
 }

@@ -95,11 +95,15 @@ namespace MemoryClient
             }
             if (gs.winners.Count > 0)
             {
-                string winners = "";
-                for (int i = 0; i < gs.winners.Count; i++)
+
+
+                string winners = String.Join(",", gs.winners);
+                /*for (int i = 0; i < gs.winners.Count; i++)
                 {
                     winners += gs.winners[i].ToString() + ", ";
-                }
+                }*/
+
+
                 if (winners != previousWinnerString)
                 {
                     testowyLabel.Text = "And the winner is: " + winners;

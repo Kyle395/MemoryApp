@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MemoryClient
 {
@@ -81,7 +82,7 @@ namespace MemoryClient
         public static void sendKey(Aes aes)
         {
             //string str = keyToSend + " " + ivToSend;
-            
+
             byte[] encrypted = rsa.Encrypt(aes.Key, false);
             string msg = Convert.ToBase64String(encrypted);
             Debug.WriteLine(msg);
@@ -104,6 +105,7 @@ namespace MemoryClient
             {
                 return "";
             }
+
             using (StreamReader sr = new StreamReader(stream, Encoding.UTF8, false, 1024, true))
             {
                 string str = sr.ReadLine();
@@ -111,21 +113,30 @@ namespace MemoryClient
                 byte[] bytes = Convert.FromBase64String(str);
 
                 string command = Decrypt(bytes, aes.Key, aes.IV);
-                
+
                 return command;
             }
+
         }
 
         public static void write(string msg)
         {
             if (stream == null) return;
-            using (StreamWriter sw = new StreamWriter(stream, Encoding.UTF8, 1024, true))
+            try
             {
-                byte[] encrytped = Encrypt(msg, aes.Key, aes.IV);
+                using (StreamWriter sw = new StreamWriter(stream, Encoding.UTF8, 1024, true))
+                {
+                    byte[] encrytped = Encrypt(msg, aes.Key, aes.IV);
 
-                string command = Convert.ToBase64String(encrytped);
+                    string command = Convert.ToBase64String(encrytped);
 
-                sw.WriteLine(command);
+
+                    sw.WriteLine(command);
+                }
+            }
+            catch (Exception e)
+            {
+
             }
         }
         public static string[] CheckMessage(string sData)

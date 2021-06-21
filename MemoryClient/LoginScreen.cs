@@ -32,6 +32,7 @@ namespace MemoryClient
 
                 if (client.Connected)
                 {
+                    sendKey(aes);
                     InitializeComponent();
                 }
             }
@@ -61,7 +62,7 @@ namespace MemoryClient
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            write("log " + texBoxLogin.Text+ " "+Hash(texBoxLogin.Text+textBoxPass.Text));
+            write("log " + texBoxLogin.Text+ " "+textBoxPass.Text);
             string msg = read();
             if (msg == "1")
             {
@@ -72,6 +73,10 @@ namespace MemoryClient
             else if (msg == "!")
             {
                 MessageBox.Show("Wrong username or password");
+            }
+            else if(msg == "error already_logged_in")
+            {
+                MessageBox.Show("this user is already logged in");
             }
 
         }

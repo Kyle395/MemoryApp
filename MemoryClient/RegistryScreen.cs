@@ -50,13 +50,18 @@ namespace MemoryClient
         {
             if (textBoxPass.Text == textBoxPass2.Text && textBoxPass.Text.Length<15)
             {
-                write("reg " + texBoxLogin.Text + " " + Hash(texBoxLogin.Text+textBoxPass.Text));
-                if (read() == "1")
+                write("reg " + texBoxLogin.Text + " " + textBoxPass.Text);
+                string msg = read();
+                if (msg == "1")
                 {
                     MessageBox.Show("Succesfully registered");
                     this.Hide();
                     LoginScreen loginScreen = new LoginScreen();
                     loginScreen.ShowDialog();
+                }
+                if(msg == "!")
+                {
+                    MessageBox.Show("Login already registered");
                 }
             }
             else MessageBox.Show("Passwords are not identical");

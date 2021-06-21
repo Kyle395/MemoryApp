@@ -15,6 +15,7 @@ namespace MemoryClient
     using static CommProtocol;
     public partial class RegistryScreen : Form
     {
+        LoginScreen LoginScreen;
         TcpClient client;
         NetworkStream stream;
         static string Hash(string password)
@@ -32,8 +33,9 @@ namespace MemoryClient
                 return sb.ToString();
             }
         }
-        public RegistryScreen(TcpClient Client)
+        public RegistryScreen(TcpClient Client, LoginScreen loginScreen)
         {
+            this.LoginScreen = loginScreen;
             this.client = Client;
             stream = Client.GetStream();
             InitializeComponent();
@@ -42,8 +44,7 @@ namespace MemoryClient
         private void cnlBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginScreen loginScreen = new LoginScreen();
-            loginScreen.ShowDialog();
+            LoginScreen.ShowDialog();
         }
 
         private void regBtn_Click(object sender, EventArgs e)

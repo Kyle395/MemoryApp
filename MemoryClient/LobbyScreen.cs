@@ -71,7 +71,6 @@ namespace MemoryClient
             if (logData[0] == "game")
             {
                 gs.Decode(logData.Skip(1).ToArray());
-
             }
             else MessageBox.Show("PullState error");
             RefreshDisplay();
@@ -94,7 +93,6 @@ namespace MemoryClient
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.connected;
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.score;
             }
-            testowyLabel.Text = gs.winners.Count.ToString();
             if (gs.winners.Count > 0)
             {
                 string winners = "";

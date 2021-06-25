@@ -35,7 +35,27 @@ namespace MemoryClient
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
             dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.Rows.Clear();
+
             write("ref");
+            string[] data = CheckMessage(read());
+
+
+            int x = 0;
+            int numberOfRows = int.Parse(data[x++]);
+
+            if (numberOfRows != 0)
+            {
+                this.dataGridView1.RowCount = numberOfRows;
+            }
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
+                }
+            }
         }
         private void refreshBtn_Click(object sender, EventArgs e)
         {

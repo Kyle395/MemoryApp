@@ -17,7 +17,6 @@ namespace MemoryClient
         string username;
         string RoomId;
         string previousWinnerString = "";
-        bool isCollapsed;
         MainScreen mainScreen;
         public LobbyScreen(MainScreen mainScreen, string username, string RoomId)
         {
@@ -37,14 +36,14 @@ namespace MemoryClient
             {
                 return new Image[]
                 {
-                    Properties.Resources.img1,
-                    Properties.Resources.img2,
-                    Properties.Resources.img3,
-                    Properties.Resources.img4,
-                    Properties.Resources.img5,
-                    Properties.Resources.img6,
-                    Properties.Resources.img7,
-                    Properties.Resources.img8
+                    Properties.Resources.SuperHeroImg1,
+                    Properties.Resources.SuperHeroImg2,
+                    Properties.Resources.SuperHeroImg3,
+                    Properties.Resources.SuperHeroImg4,
+                    Properties.Resources.SuperHeroImg5,
+                    Properties.Resources.SuperHeroImg6,
+                    Properties.Resources.SuperHeroImg7,
+                    Properties.Resources.SuperHeroImg8
                 };
             }
         }
@@ -173,6 +172,10 @@ namespace MemoryClient
         private void table1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

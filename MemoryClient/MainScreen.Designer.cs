@@ -55,7 +55,7 @@ namespace MemoryClient
             this.begun});
             this.dataGridView1.Location = new System.Drawing.Point(133, 60);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(403, 156);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id

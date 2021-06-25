@@ -29,6 +29,7 @@ namespace MemoryClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPrivate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,7 +37,6 @@ namespace MemoryClient
             this.begun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.clsBtn = new System.Windows.Forms.Button();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.createBtn = new System.Windows.Forms.Button();
             this.joinRoomBtn = new System.Windows.Forms.Button();
@@ -100,49 +100,38 @@ namespace MemoryClient
             this.clsBtn.Name = "clsBtn";
             this.clsBtn.Size = new System.Drawing.Size(81, 31);
             this.clsBtn.TabIndex = 4;
-            this.clsBtn.Text = "Close";
+            this.clsBtn.Text = "Close App";
             this.clsBtn.UseVisualStyleBackColor = true;
             this.clsBtn.Click += new System.EventHandler(this.clsBtn_Click);
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.Location = new System.Drawing.Point(536, 288);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(78, 31);
-            this.logoutBtn.TabIndex = 5;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = true;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(609, 60);
+            this.refreshBtn.Location = new System.Drawing.Point(582, 60);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshBtn.Size = new System.Drawing.Size(138, 49);
             this.refreshBtn.TabIndex = 6;
-            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Text = "Refresh Available Rooms";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // createBtn
             // 
             this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createBtn.Location = new System.Drawing.Point(608, 89);
+            this.createBtn.Location = new System.Drawing.Point(582, 115);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(112, 45);
             this.createBtn.TabIndex = 7;
-            this.createBtn.Text = "Create a room";
+            this.createBtn.Text = "Create a new room";
             this.createBtn.UseVisualStyleBackColor = true;
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // joinRoomBtn
             // 
             this.joinRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joinRoomBtn.Location = new System.Drawing.Point(609, 140);
+            this.joinRoomBtn.Location = new System.Drawing.Point(582, 166);
             this.joinRoomBtn.Name = "joinRoomBtn";
-            this.joinRoomBtn.Size = new System.Drawing.Size(75, 27);
+            this.joinRoomBtn.Size = new System.Drawing.Size(112, 37);
             this.joinRoomBtn.TabIndex = 8;
             this.joinRoomBtn.Text = "Join room";
             this.joinRoomBtn.UseVisualStyleBackColor = true;
@@ -177,12 +166,12 @@ namespace MemoryClient
             this.Controls.Add(this.joinRoomBtn);
             this.Controls.Add(this.createBtn);
             this.Controls.Add(this.refreshBtn);
-            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.clsBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainScreen";
-            this.Text = "MainScreen";
+            this.Text = "Memory Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -196,7 +185,6 @@ namespace MemoryClient
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button clsBtn;
-        private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button joinRoomBtn;

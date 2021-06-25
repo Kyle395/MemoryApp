@@ -29,6 +29,7 @@ namespace MemoryClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.confirmBtn = new System.Windows.Forms.Button();
@@ -80,8 +81,9 @@ namespace MemoryClient
             this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PasswordScreen";
-            this.Text = "PasswordScreen";
+            this.Text = "Memory Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 

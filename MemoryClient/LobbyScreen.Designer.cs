@@ -30,6 +30,7 @@ namespace MemoryClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyScreen));
             this.table1 = new System.Windows.Forms.DataGridView();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isReady = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +38,13 @@ namespace MemoryClient
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaveBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNickname = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.Label();
+            this.txtRoomId = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -53,13 +61,6 @@ namespace MemoryClient
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNickname = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.Label();
-            this.txtRoomId = new System.Windows.Forms.Label();
             this.testowyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -92,6 +93,7 @@ namespace MemoryClient
             this.table1.Name = "table1";
             this.table1.Size = new System.Drawing.Size(444, 136);
             this.table1.TabIndex = 1;
+            this.table1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table1_CellContentClick);
             // 
             // Login
             // 
@@ -124,7 +126,7 @@ namespace MemoryClient
             // leaveBtn
             // 
             this.leaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leaveBtn.Location = new System.Drawing.Point(916, 49);
+            this.leaveBtn.Location = new System.Drawing.Point(905, 49);
             this.leaveBtn.Name = "leaveBtn";
             this.leaveBtn.Size = new System.Drawing.Size(93, 32);
             this.leaveBtn.TabIndex = 2;
@@ -141,6 +143,70 @@ namespace MemoryClient
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Room Id: ";
+            // 
+            // timer
+            // 
+            this.timer.Interval = 50;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(550, 278);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "It\'s your move: ";
+            // 
+            // txtNickname
+            // 
+            this.txtNickname.AutoSize = true;
+            this.txtNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNickname.Location = new System.Drawing.Point(670, 278);
+            this.txtNickname.Name = "txtNickname";
+            this.txtNickname.Size = new System.Drawing.Size(0, 20);
+            this.txtNickname.TabIndex = 50;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(565, 234);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(74, 24);
+            this.checkBox1.TabIndex = 51;
+            this.checkBox1.Text = "Ready";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(564, 39);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(91, 20);
+            this.label.TabIndex = 52;
+            this.label.Text = "Username: ";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(668, 39);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(0, 20);
+            this.txtUsername.TabIndex = 53;
+            // 
+            // txtRoomId
+            // 
+            this.txtRoomId.AutoSize = true;
+            this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomId.Location = new System.Drawing.Point(669, 66);
+            this.txtRoomId.Name = "txtRoomId";
+            this.txtRoomId.Size = new System.Drawing.Size(0, 20);
+            this.txtRoomId.TabIndex = 54;
             // 
             // pictureBox13
             // 
@@ -302,78 +368,14 @@ namespace MemoryClient
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.clickImage);
             // 
-            // timer
-            // 
-            this.timer.Interval = 50;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 278);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "It\'s your move: ";
-            // 
-            // txtNickname
-            // 
-            this.txtNickname.AutoSize = true;
-            this.txtNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNickname.Location = new System.Drawing.Point(670, 278);
-            this.txtNickname.Name = "txtNickname";
-            this.txtNickname.Size = new System.Drawing.Size(0, 20);
-            this.txtNickname.TabIndex = 50;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(565, 234);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 24);
-            this.checkBox1.TabIndex = 51;
-            this.checkBox1.Text = "Ready";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(564, 39);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(91, 20);
-            this.label.TabIndex = 52;
-            this.label.Text = "Username: ";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.AutoSize = true;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(668, 39);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(0, 20);
-            this.txtUsername.TabIndex = 53;
-            // 
-            // txtRoomId
-            // 
-            this.txtRoomId.AutoSize = true;
-            this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomId.Location = new System.Drawing.Point(669, 66);
-            this.txtRoomId.Name = "txtRoomId";
-            this.txtRoomId.Size = new System.Drawing.Size(0, 20);
-            this.txtRoomId.TabIndex = 54;
-            // 
             // testowyLabel
             // 
             this.testowyLabel.AutoSize = true;
-            this.testowyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testowyLabel.Location = new System.Drawing.Point(547, 362);
+            this.testowyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testowyLabel.Location = new System.Drawing.Point(551, 317);
             this.testowyLabel.Name = "testowyLabel";
-            this.testowyLabel.Size = new System.Drawing.Size(0, 25);
-            this.testowyLabel.TabIndex = 55;
+            this.testowyLabel.Size = new System.Drawing.Size(0, 20);
+            this.testowyLabel.TabIndex = 56;
             // 
             // LobbyScreen
             // 
@@ -406,8 +408,9 @@ namespace MemoryClient
             this.Controls.Add(this.label1);
             this.Controls.Add(this.leaveBtn);
             this.Controls.Add(this.table1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LobbyScreen";
-            this.Text = "LobbyScreen";
+            this.Text = "Memory Game";
             this.Load += new System.EventHandler(this.LobbyScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();

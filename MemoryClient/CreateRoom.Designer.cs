@@ -29,6 +29,7 @@ namespace MemoryClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateRoom));
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.createBtn = new System.Windows.Forms.Button();
             this.isPrivate = new System.Windows.Forms.CheckBox();
@@ -92,8 +93,9 @@ namespace MemoryClient
             this.Controls.Add(this.isPrivate);
             this.Controls.Add(this.createBtn);
             this.Controls.Add(this.textBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateRoom";
-            this.Text = "CreateRoom";
+            this.Text = "Memory Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,6 +34,8 @@ namespace MemoryClient
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
+            dataGridView1.RowHeadersVisible = false;
+            write("ref");
         }
         private void refreshBtn_Click(object sender, EventArgs e)
         {
@@ -135,15 +137,6 @@ namespace MemoryClient
             write("logout");
             this.Close();
         }
-
-        private void logoutBtn_Click(object sender, EventArgs e)
-        {
-            write("logout");
-            this.Hide();
-            LoginScreen loginScreen = new LoginScreen();
-            loginScreen.Show();
-        }
-
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
             write("logout");

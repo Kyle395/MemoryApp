@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemoryClient.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace MemoryClient
         string username;
         string RoomId;
         string previousWinnerString = "";
+        bool isCollapsed;
         MainScreen mainScreen;
         public LobbyScreen(MainScreen mainScreen, string username, string RoomId)
         {
@@ -23,6 +25,7 @@ namespace MemoryClient
             this.username = username;
             this.mainScreen = mainScreen;
             InitializeComponent();
+            table1.RowHeadersVisible = false;
         }
         private PictureBox[] pictureBoxes
         {
@@ -165,6 +168,11 @@ namespace MemoryClient
                 CommProtocol.write("ready false");
             }
             PullState();
+        }
+
+        private void table1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -64,6 +64,11 @@
     <Compile Include="PasswordScreen.Designer.cs">
       <DependentUpon>PasswordScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SingleGameScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,14 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegistryScreen.resx">
       <DependentUpon>RegistryScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,12 +164,11 @@
   <ItemGroup>
     <None Include="Resources\img8.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\question.png" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="keys\pub.txt" />
+    <None Include="Resources\question.jpg" />
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

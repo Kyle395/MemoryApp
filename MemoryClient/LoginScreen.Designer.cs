@@ -29,6 +29,7 @@ namespace MemoryClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.texBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,8 +117,9 @@ namespace MemoryClient
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPass);
             this.Controls.Add(this.texBoxLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginScreen";
-            this.Text = "LoginScreen";
+            this.Text = "Memory Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginScreen_FormClosing);
             this.Load += new System.EventHandler(this.LoginScreen_Load);
             this.ResumeLayout(false);

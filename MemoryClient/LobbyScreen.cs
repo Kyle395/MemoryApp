@@ -65,6 +65,23 @@ namespace MemoryClient
                 };
             }
         }
+        private static Image[] FruitsImages
+        {
+            get
+            {
+                return new Image[]
+                {
+                Properties.Resources.Fruits1,
+                Properties.Resources.Fruits2,
+                Properties.Resources.Fruits3,
+                Properties.Resources.Fruits4,
+                Properties.Resources.Fruits5,
+                Properties.Resources.Fruits6,
+                Properties.Resources.Fruits7,
+                Properties.Resources.Fruits8
+                };
+            }
+        }
         private void SetImages()
         {
             for (int i = 0; i < 16; i++)
@@ -87,6 +104,10 @@ namespace MemoryClient
                     if (comboBox1.Text == "Holyday")
                     {
                         pictureBoxes[i].Image = HolydayImages[gs.board[i]];
+                    }
+                    if (comboBox1.Text == "Fruits")
+                    {
+                        pictureBoxes[i].Image = FruitsImages[gs.board[i]];
                     }
                 }
             }

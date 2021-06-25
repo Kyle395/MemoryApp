@@ -143,6 +143,14 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="keys\pub.txt" />
+    <None Include="Resources\Fruits8.png" />
+    <None Include="Resources\Fruits7.png" />
+    <None Include="Resources\Fruits6.png" />
+    <None Include="Resources\Fruits5.png" />
+    <None Include="Resources\Fruits4.png" />
+    <None Include="Resources\Fruits3.png" />
+    <None Include="Resources\Fruits2.png" />
+    <None Include="Resources\Fruits1.png" />
     <None Include="Resources\SuperHero8.png" />
     <None Include="Resources\SuperHero7.png" />
     <None Include="Resources\SuperHero6.png" />

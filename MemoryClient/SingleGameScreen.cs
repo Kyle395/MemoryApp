@@ -65,6 +65,23 @@ namespace MemoryClient
                 };
             }
         }
+        private static Image[] FruitsImages
+        {
+            get
+            {
+                return new Image[]
+                {
+                Properties.Resources.Fruits1,
+                Properties.Resources.Fruits2,
+                Properties.Resources.Fruits3,
+                Properties.Resources.Fruits4,
+                Properties.Resources.Fruits5,
+                Properties.Resources.Fruits6,
+                Properties.Resources.Fruits7,
+                Properties.Resources.Fruits8
+                };
+            }
+        }
 
         private void startGameTimer()
         {
@@ -127,6 +144,14 @@ namespace MemoryClient
             if (comboBox1.Text == "Holyday")
             {
                 foreach (var image in HolydayImages)
+                {
+                    getFreeSlot().Tag = image;
+                    getFreeSlot().Tag = image;
+                }
+            }
+            if (comboBox1.Text == "Fruits")
+            {
+                foreach (var image in FruitsImages)
                 {
                     getFreeSlot().Tag = image;
                     getFreeSlot().Tag = image;

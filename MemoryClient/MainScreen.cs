@@ -50,7 +50,7 @@ namespace MemoryClient
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SingleGameScreen game = new SingleGameScreen();
+            SingleGameScreen game = new SingleGameScreen(this);
             game.ShowDialog();
         }
 

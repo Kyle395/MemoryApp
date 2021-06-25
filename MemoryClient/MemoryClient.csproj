@@ -140,41 +140,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img8.png" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="keys\pub.txt" />
-    <None Include="Resources\img 16.png" />
-    <None Include="Resources\img 15.png" />
-    <None Include="Resources\img 14.png" />
-    <None Include="Resources\img 13.png" />
-    <None Include="Resources\img 12.png" />
-    <None Include="Resources\img 11.png" />
-    <None Include="Resources\img 10.png" />
-    <None Include="Resources\img 9 .png" />
+    <None Include="Resources\SuperHero8.png" />
+    <None Include="Resources\SuperHero7.png" />
+    <None Include="Resources\SuperHero6.png" />
+    <None Include="Resources\SuperHero5.png" />
+    <None Include="Resources\SuperHero4.png" />
+    <None Include="Resources\SuperHero3.png" />
+    <None Include="Resources\SuperHero2.png" />
+    <None Include="Resources\SuperHero1.png" />
+    <None Include="Resources\Vacation8.png" />
+    <None Include="Resources\Vacation7.png" />
+    <None Include="Resources\Vacation6.png" />
+    <None Include="Resources\Vacation5.png" />
+    <None Include="Resources\Vacation4.png" />
+    <None Include="Resources\Vacation3.png" />
+    <None Include="Resources\Vacation2.png" />
+    <None Include="Resources\Vacation1.png" />
     <None Include="Resources\question.jpg" />
     <None Include="Resources\icon.ico" />
   </ItemGroup>

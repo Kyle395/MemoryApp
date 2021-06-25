@@ -47,6 +47,7 @@ namespace MemoryClient
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -63,28 +64,24 @@ namespace MemoryClient
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 94;
             // 
             // isPrivate
             // 
             this.isPrivate.HeaderText = "isPrivate";
             this.isPrivate.Name = "isPrivate";
             this.isPrivate.ReadOnly = true;
-            this.isPrivate.Width = 94;
             // 
             // Players
             // 
             this.Players.HeaderText = "Players";
             this.Players.Name = "Players";
             this.Players.ReadOnly = true;
-            this.Players.Width = 93;
             // 
             // begun
             // 
             this.begun.HeaderText = "Game started";
             this.begun.Name = "begun";
             this.begun.ReadOnly = true;
-            this.begun.Width = 94;
             // 
             // button2
             // 
@@ -111,7 +108,7 @@ namespace MemoryClient
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(582, 60);
+            this.refreshBtn.Location = new System.Drawing.Point(543, 60);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(138, 49);
             this.refreshBtn.TabIndex = 6;
@@ -122,7 +119,7 @@ namespace MemoryClient
             // createBtn
             // 
             this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createBtn.Location = new System.Drawing.Point(582, 115);
+            this.createBtn.Location = new System.Drawing.Point(543, 115);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(112, 45);
             this.createBtn.TabIndex = 7;
@@ -133,7 +130,7 @@ namespace MemoryClient
             // joinRoomBtn
             // 
             this.joinRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joinRoomBtn.Location = new System.Drawing.Point(582, 166);
+            this.joinRoomBtn.Location = new System.Drawing.Point(543, 166);
             this.joinRoomBtn.Name = "joinRoomBtn";
             this.joinRoomBtn.Size = new System.Drawing.Size(112, 37);
             this.joinRoomBtn.TabIndex = 8;

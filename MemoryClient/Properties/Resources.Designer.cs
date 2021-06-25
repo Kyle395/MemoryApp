@@ -83,9 +83,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg1 {
+        internal static System.Drawing.Bitmap SuperHero1 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg1", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg2 {
+        internal static System.Drawing.Bitmap SuperHero2 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg2", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg3 {
+        internal static System.Drawing.Bitmap SuperHero3 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg3", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg4 {
+        internal static System.Drawing.Bitmap SuperHero4 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg4", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg5 {
+        internal static System.Drawing.Bitmap SuperHero5 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg5", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg6 {
+        internal static System.Drawing.Bitmap SuperHero6 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg6", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg7 {
+        internal static System.Drawing.Bitmap SuperHero7 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg7", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SuperHeroImg8 {
+        internal static System.Drawing.Bitmap SuperHero8 {
             get {
-                object obj = ResourceManager.GetObject("SuperHeroImg8", resourceCulture);
+                object obj = ResourceManager.GetObject("SuperHero8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg1 {
+        internal static System.Drawing.Bitmap Vacation1 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg1", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg2 {
+        internal static System.Drawing.Bitmap Vacation2 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg2", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg3 {
+        internal static System.Drawing.Bitmap Vacation3 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg3", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg4 {
+        internal static System.Drawing.Bitmap Vacation4 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg4", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg5 {
+        internal static System.Drawing.Bitmap Vacation5 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg5", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg6 {
+        internal static System.Drawing.Bitmap Vacation6 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg6", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg7 {
+        internal static System.Drawing.Bitmap Vacation7 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg7", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace MemoryClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VacationImg8 {
+        internal static System.Drawing.Bitmap Vacation8 {
             get {
-                object obj = ResourceManager.GetObject("VacationImg8", resourceCulture);
+                object obj = ResourceManager.GetObject("Vacation8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

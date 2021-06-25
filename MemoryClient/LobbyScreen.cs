@@ -25,25 +25,43 @@ namespace MemoryClient
             this.mainScreen = mainScreen;
             InitializeComponent();
             table1.RowHeadersVisible = false;
+            comboBox1.Text = "Super Hero";
         }
         private PictureBox[] pictureBoxes
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-        private static Image[] images
+        private static Image[] HolydayImages
         {
             get
             {
                 return new Image[]
                 {
-                    Properties.Resources.SuperHeroImg1,
-                    Properties.Resources.SuperHeroImg2,
-                    Properties.Resources.SuperHeroImg3,
-                    Properties.Resources.SuperHeroImg4,
-                    Properties.Resources.SuperHeroImg5,
-                    Properties.Resources.SuperHeroImg6,
-                    Properties.Resources.SuperHeroImg7,
-                    Properties.Resources.SuperHeroImg8
+                Properties.Resources.Vacation1,
+                Properties.Resources.Vacation2,
+                Properties.Resources.Vacation3,
+                Properties.Resources.Vacation4,
+                Properties.Resources.Vacation5,
+                Properties.Resources.Vacation6,
+                Properties.Resources.Vacation7,
+                Properties.Resources.Vacation8
+                };
+            }
+        }
+        private static Image[] HeroImages
+        {
+            get
+            {
+                return new Image[]
+                {
+                Properties.Resources.SuperHero1,
+                Properties.Resources.SuperHero2,
+                Properties.Resources.SuperHero3,
+                Properties.Resources.SuperHero4,
+                Properties.Resources.SuperHero5,
+                Properties.Resources.SuperHero6,
+                Properties.Resources.SuperHero7,
+                Properties.Resources.SuperHero8
                 };
             }
         }
@@ -62,7 +80,14 @@ namespace MemoryClient
                 }
                 else
                 {
-                    pictureBoxes[i].Image = images[gs.board[i]];
+                    if (comboBox1.Text == "Super Hero")
+                    {
+                        pictureBoxes[i].Image = HeroImages[gs.board[i]];
+                    }
+                    if (comboBox1.Text == "Holyday")
+                    {
+                        pictureBoxes[i].Image = HolydayImages[gs.board[i]];
+                    }
                 }
             }
         }
@@ -99,11 +124,11 @@ namespace MemoryClient
             {
 
 
-                string winners = String.Join(", ", gs.winners);
-                /*for (int i = 0; i < gs.winners.Count; i++)
+                string winners = "";// = String.Join(", ", gs.winners);
+                for (int i = 0; i < gs.winners.Count; i++)
                 {
                     winners += gs.winners[i].ToString() + ", ";
-                }*/
+                }
 
 
                 if (winners != previousWinnerString)
@@ -176,6 +201,7 @@ namespace MemoryClient
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
     }
 }

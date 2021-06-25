@@ -19,10 +19,11 @@ namespace MemoryClient
         Timer clickTimer = new Timer();
         int time = 60;
         Timer timer = new Timer { Interval = 1000 };
+        MainScreen mainScreen;
 
-
-        public SingleGameScreen()
+        public SingleGameScreen(MainScreen mainScreen)
         {
+            this.mainScreen = mainScreen;
             InitializeComponent();
         }
 
@@ -30,21 +31,37 @@ namespace MemoryClient
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-
-        private static IEnumerable<Image> images
+        private static Image[] HolydayImages
         {
             get
             {
                 return new Image[]
                 {
-                    Properties.Resources.SuperHeroImg1,
-                    Properties.Resources.SuperHeroImg2,
-                    Properties.Resources.SuperHeroImg3,
-                    Properties.Resources.SuperHeroImg4,
-                    Properties.Resources.SuperHeroImg5,
-                    Properties.Resources.SuperHeroImg6,
-                    Properties.Resources.SuperHeroImg7,
-                    Properties.Resources.SuperHeroImg8
+                Properties.Resources.Vacation1,
+                Properties.Resources.Vacation2,
+                Properties.Resources.Vacation3,
+                Properties.Resources.Vacation4,
+                Properties.Resources.Vacation5,
+                Properties.Resources.Vacation6,
+                Properties.Resources.Vacation7,
+                Properties.Resources.Vacation8
+                };
+            }
+        }
+        private static Image[] HeroImages
+        {
+            get
+            {
+                return new Image[]
+                {
+                Properties.Resources.SuperHero1,
+                Properties.Resources.SuperHero2,
+                Properties.Resources.SuperHero3,
+                Properties.Resources.SuperHero4,
+                Properties.Resources.SuperHero5,
+                Properties.Resources.SuperHero6,
+                Properties.Resources.SuperHero7,
+                Properties.Resources.SuperHero8
                 };
             }
         }
@@ -99,10 +116,21 @@ namespace MemoryClient
         }
         private void setRandomImages()
         {
-            foreach (var image in images)
+            if(comboBox1.Text=="Super Hero")
             {
-                getFreeSlot().Tag = image;
-                getFreeSlot().Tag = image;
+                foreach (var image in HeroImages)
+                {
+                    getFreeSlot().Tag = image;
+                    getFreeSlot().Tag = image;
+                }
+            }
+            if (comboBox1.Text == "Holyday")
+            {
+                foreach (var image in HolydayImages)
+                {
+                    getFreeSlot().Tag = image;
+                    getFreeSlot().Tag = image;
+                }
             }
         }
 
@@ -127,7 +155,7 @@ namespace MemoryClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            comboBox1.Text = "Super Hero";
         }
 
         private void clickImage(object sender, EventArgs e)
@@ -160,6 +188,14 @@ namespace MemoryClient
             if (pictureBoxes.Any(p => p.Visible)) return;
             MessageBox.Show("You won");
             ResetImages();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timer.Stop();
+            this.Close();
+            mainScreen.Show();
+
         }
     }
 }

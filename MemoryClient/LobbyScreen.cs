@@ -100,7 +100,7 @@ namespace MemoryClient
             {
 
 
-                string winners = String.Join(",", gs.winners);
+                string winners = String.Join(", ", gs.winners);
                 /*for (int i = 0; i < gs.winners.Count; i++)
                 {
                     winners += gs.winners[i].ToString() + ", ";

@@ -148,5 +148,11 @@ namespace MemoryClient
             write("logout");
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditPasswordScreen editPassword = new EditPasswordScreen(Client, username);
+            editPassword.Show();
+        }
     }
 }

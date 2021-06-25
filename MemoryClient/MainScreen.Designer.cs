@@ -42,6 +42,7 @@ namespace MemoryClient
             this.joinRoomBtn = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace MemoryClient
             this.isPrivate,
             this.Players,
             this.begun});
-            this.dataGridView1.Location = new System.Drawing.Point(133, 60);
+            this.dataGridView1.Location = new System.Drawing.Point(76, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(379, 156);
             this.dataGridView1.TabIndex = 0;
@@ -86,7 +87,7 @@ namespace MemoryClient
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(133, 222);
+            this.button2.Location = new System.Drawing.Point(76, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 46);
             this.button2.TabIndex = 3;
@@ -97,7 +98,7 @@ namespace MemoryClient
             // clsBtn
             // 
             this.clsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clsBtn.Location = new System.Drawing.Point(639, 288);
+            this.clsBtn.Location = new System.Drawing.Point(543, 281);
             this.clsBtn.Name = "clsBtn";
             this.clsBtn.Size = new System.Drawing.Size(81, 31);
             this.clsBtn.TabIndex = 4;
@@ -108,7 +109,7 @@ namespace MemoryClient
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(543, 60);
+            this.refreshBtn.Location = new System.Drawing.Point(486, 58);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(138, 49);
             this.refreshBtn.TabIndex = 6;
@@ -119,7 +120,7 @@ namespace MemoryClient
             // createBtn
             // 
             this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createBtn.Location = new System.Drawing.Point(543, 115);
+            this.createBtn.Location = new System.Drawing.Point(486, 113);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(112, 45);
             this.createBtn.TabIndex = 7;
@@ -130,7 +131,7 @@ namespace MemoryClient
             // joinRoomBtn
             // 
             this.joinRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joinRoomBtn.Location = new System.Drawing.Point(543, 166);
+            this.joinRoomBtn.Location = new System.Drawing.Point(486, 164);
             this.joinRoomBtn.Name = "joinRoomBtn";
             this.joinRoomBtn.Size = new System.Drawing.Size(112, 37);
             this.joinRoomBtn.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace MemoryClient
             // 
             this.txtUsername.AutoSize = true;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(246, 19);
+            this.txtUsername.Location = new System.Drawing.Point(189, 17);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(0, 20);
             this.txtUsername.TabIndex = 9;
@@ -151,17 +152,29 @@ namespace MemoryClient
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(129, 19);
+            this.label2.Location = new System.Drawing.Point(72, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Welcome back ";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(348, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 24);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Edit Password";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 331);
+            this.ClientSize = new System.Drawing.Size(700, 324);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.joinRoomBtn);
@@ -195,5 +208,6 @@ namespace MemoryClient
         private System.Windows.Forms.DataGridViewTextBoxColumn isPrivate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Players;
         private System.Windows.Forms.DataGridViewTextBoxColumn begun;
+        private System.Windows.Forms.Button button1;
     }
 }

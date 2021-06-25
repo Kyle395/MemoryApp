@@ -58,11 +58,11 @@
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="GameState.cs" />
-    <Compile Include="PasswordScreen.cs">
+    <Compile Include="EditPasswordScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasswordScreen.Designer.cs">
-      <DependentUpon>PasswordScreen.cs</DependentUpon>
+    <Compile Include="EditPasswordScreen.Designer.cs">
+      <DependentUpon>EditPasswordScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordScreen.resx">
-      <DependentUpon>PasswordScreen.cs</DependentUpon>
+    <EmbeddedResource Include="EditPasswordScreen.resx">
+      <DependentUpon>EditPasswordScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingleGameScreen.resx">
       <DependentUpon>SingleGameScreen.cs</DependentUpon>

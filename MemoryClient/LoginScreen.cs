@@ -63,13 +63,13 @@ namespace MemoryClient
         {
             write("log " + texBoxLogin.Text+ " "+textBoxPass.Text);
             string msg = read();
-            if (msg == "1")
+            if (msg == "log ok")
             {
                 this.Hide();
                 MainScreen mainScreen = new MainScreen(client, texBoxLogin.Text);
                 mainScreen.ShowDialog();
             }
-            else if (msg == "!")
+            else if (msg == "error wrong_credentials")
             {
                 MessageBox.Show("Wrong username or password");
             }

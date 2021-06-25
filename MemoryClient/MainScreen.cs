@@ -101,11 +101,11 @@ namespace MemoryClient
                             LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
                             lobbyScreen.ShowDialog();
                         }
-                        else if (msg == "error 1")
+                        else if (msg == "error wrong_password")
                         {
                             MessageBox.Show("Wrong password");
                         }
-                        else if (msg == "error 2")
+                        else if (msg == "error full")
                         {
                             MessageBox.Show("Selected room is full");
                         }
@@ -121,7 +121,7 @@ namespace MemoryClient
                             LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
                             lobbyScreen.ShowDialog();
                         }
-                        else if (msg == "error 2")
+                        else if (msg == "error full")
                         {
                             MessageBox.Show("Selected room is full");
                         }

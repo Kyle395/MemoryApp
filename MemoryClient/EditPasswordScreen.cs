@@ -31,7 +31,7 @@ namespace MemoryClient
             {
                 write("chngpass "+ username +" "+ txtPass1.Text);
                 string message = read();
-                if (message == "OK")
+                if (message == "ok")
                 {
                     MessageBox.Show("Password Succesfuly changed");
                     this.Close();

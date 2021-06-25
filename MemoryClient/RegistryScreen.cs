@@ -39,14 +39,14 @@ namespace MemoryClient
             {
                 write("reg " + texBoxLogin.Text + " " + textBoxPass.Text);
                 string msg = read();
-                if (msg == "1")
+                if (msg == "reg ok")
                 {
                     MessageBox.Show("Succesfully registered");
                     this.Hide();
                     LoginScreen loginScreen = new LoginScreen();
                     loginScreen.ShowDialog();
                 }
-                if(msg == "!")
+                if(msg == "error login_already_used")
                 {
                     MessageBox.Show("Login already registered");
                 }

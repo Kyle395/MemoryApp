@@ -55,7 +55,7 @@ namespace MemoryClient
             this.begun});
             this.dataGridView1.Location = new System.Drawing.Point(133, 60);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(403, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(379, 156);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id
@@ -63,24 +63,28 @@ namespace MemoryClient
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 94;
             // 
             // isPrivate
             // 
             this.isPrivate.HeaderText = "isPrivate";
             this.isPrivate.Name = "isPrivate";
             this.isPrivate.ReadOnly = true;
+            this.isPrivate.Width = 94;
             // 
             // Players
             // 
             this.Players.HeaderText = "Players";
             this.Players.Name = "Players";
             this.Players.ReadOnly = true;
+            this.Players.Width = 93;
             // 
             // begun
             // 
             this.begun.HeaderText = "Game started";
             this.begun.Name = "begun";
             this.begun.ReadOnly = true;
+            this.begun.Width = 94;
             // 
             // button2
             // 

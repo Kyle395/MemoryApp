@@ -8,11 +8,37 @@ using System.Threading;
 namespace MemoryClient
 {
     using static CommProtocol;
+    
     public partial class MainScreen : Form
     {
         TcpClient Client;
         NetworkStream stream;
         string username;
+
+        public void refresh()
+        {
+            dataGridView1.Rows.Clear();
+
+            write("ref");
+            string[] data = CheckMessage(read());
+
+
+            int x = 0;
+            int numberOfRows = int.Parse(data[x++]);
+
+            if (numberOfRows != 0)
+            {
+                this.dataGridView1.RowCount = numberOfRows;
+            }
+
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
+                }
+            }
+        }
         public MainScreen(TcpClient Client, string username)
         {
             this.Client = Client;
@@ -34,56 +60,15 @@ namespace MemoryClient
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
             dataGridView1.ColumnCount = 4;
-            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersVisible = false;            
 
             dataGridView1.Rows.Clear();
 
-            write("ref");
-            string[] data = CheckMessage(read());
-
-
-            int x = 0;
-            int numberOfRows = int.Parse(data[x++]);
-
-            if (numberOfRows != 0)
-            {
-                this.dataGridView1.RowCount = numberOfRows;
-            }
-            for (int i = 0; i < numberOfRows; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
-                }
-            }
+            refresh();
         }
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-
-            write("ref");
-            string[] data = CheckMessage(read());
-
-
-            int x = 0;
-            int numberOfRows = int.Parse(data[x++]);
-
-            if (numberOfRows != 0)
-            {
-                this.dataGridView1.RowCount = numberOfRows;
-            }
-            else
-            {
-                MessageBox.Show("No rooms found");
-            }
-
-            for (int i = 0; i < numberOfRows; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
-                }
-            }
+            refresh();
         }
 
         private void joinRoomBtn_Click(object sender, EventArgs e)
@@ -150,6 +135,7 @@ namespace MemoryClient
         {
             CreateRoom createRoom = new CreateRoom(Client);
             createRoom.ShowDialog();
+            refresh();
         }
 
         private void clsBtn_Click(object sender, EventArgs e)

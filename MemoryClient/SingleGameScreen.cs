@@ -31,7 +31,7 @@ namespace MemoryClient
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-        private static Image[] HolydayImages
+        private static Image[] HolidayImages
         {
             get
             {
@@ -141,9 +141,9 @@ namespace MemoryClient
                     getFreeSlot().Tag = image;
                 }
             }
-            if (comboBox1.Text == "Holyday")
+            if (comboBox1.Text == "Holiday")
             {
-                foreach (var image in HolydayImages)
+                foreach (var image in HolidayImages)
                 {
                     getFreeSlot().Tag = image;
                     getFreeSlot().Tag = image;

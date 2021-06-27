@@ -387,7 +387,7 @@ namespace MemoryClient
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Super Hero",
-            "Holyday",
+            "Holiday",
             "Fruits"});
             this.comboBox1.Location = new System.Drawing.Point(723, 377);
             this.comboBox1.Name = "comboBox1";

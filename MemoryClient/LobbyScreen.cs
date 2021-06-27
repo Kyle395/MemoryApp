@@ -31,7 +31,7 @@ namespace MemoryClient
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-        private static Image[] HolydayImages
+        private static Image[] HolidayImages
         {
             get
             {
@@ -101,9 +101,9 @@ namespace MemoryClient
                     {
                         pictureBoxes[i].Image = HeroImages[gs.board[i]];
                     }
-                    if (comboBox1.Text == "Holyday")
+                    if (comboBox1.Text == "Holiday")
                     {
-                        pictureBoxes[i].Image = HolydayImages[gs.board[i]];
+                        pictureBoxes[i].Image = HolidayImages[gs.board[i]];
                     }
                     if (comboBox1.Text == "Fruits")
                     {

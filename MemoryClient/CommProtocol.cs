@@ -22,7 +22,7 @@ namespace MemoryClient
             stream = _stream;
             aes = new AesManaged();
             rsa = new RSACryptoServiceProvider();
-            byte[] publicKey = File.ReadAllBytes("C:\\Users\\wojci\\source\\repos\\MemoryClient\\MemoryClient\\keys\\pub.txt");
+            byte[] publicKey = File.ReadAllBytes("C:\\Users\\Piotrek\\source\\repos\\MemoryApp\\MemoryClient\\keys\\pub.txt");
             rsa.ImportCspBlob(publicKey);
         }
 
@@ -108,15 +108,21 @@ namespace MemoryClient
 
             using (StreamReader sr = new StreamReader(stream, Encoding.UTF8, false, 1024, true))
             {
-                string str = sr.ReadLine();
+                try
+                {
+                    string str = sr.ReadLine();
 
-                byte[] bytes = Convert.FromBase64String(str);
+                    byte[] bytes = Convert.FromBase64String(str);
 
-                string command = Decrypt(bytes, aes.Key, aes.IV);
+                    string command = Decrypt(bytes, aes.Key, aes.IV);
 
-                return command;
+                    return command;
+                }
+                catch (Exception e)
+                {                    
+                    return "";
+                }
             }
-
         }
 
         public static void write(string msg)

@@ -115,6 +115,12 @@ namespace MemoryClient
         public void PullState()
         {
             string sData = CommProtocol.read();
+            if (sData == "")
+            {
+                timer.Stop();
+                MessageBox.Show("Connection error");                
+                Application.Exit();
+            }
             string[] logData = CommProtocol.CheckMessage(sData);
             if (logData[0] == "game")
             {

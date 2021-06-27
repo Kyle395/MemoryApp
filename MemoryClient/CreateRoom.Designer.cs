@@ -96,6 +96,7 @@ namespace MemoryClient
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateRoom";
             this.Text = "Memory Game";
+            this.Load += new System.EventHandler(this.CreateRoom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

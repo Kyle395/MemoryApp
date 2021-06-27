@@ -32,7 +32,7 @@ namespace MemoryClient
                 {
                     if (vs[i].ToString() == " ")
                     {
-                        MessageBox.Show("o ty zlosliwa swinko, usun spacje w hasle");
+                        MessageBox.Show("Did you remove all spaces in your password? If not, please delete them.");
                         textBox3.Clear();
                         return;
                     }
@@ -49,6 +49,11 @@ namespace MemoryClient
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CreateRoom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

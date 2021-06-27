@@ -22,7 +22,8 @@ namespace MemoryClient
             stream = _stream;
             aes = new AesManaged();
             rsa = new RSACryptoServiceProvider();
-            byte[] publicKey = File.ReadAllBytes("C:\\Users\\Piotrek\\source\\repos\\MemoryApp\\MemoryClient\\keys\\pub.txt");
+            string keyPath = Directory.GetCurrentDirectory()+"\\keys\\pub.txt";
+            byte[] publicKey = File.ReadAllBytes(keyPath);
             rsa.ImportCspBlob(publicKey);
         }
 

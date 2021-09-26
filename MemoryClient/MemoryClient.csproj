@@ -57,17 +57,18 @@
     <Compile Include="CreateRoom.Designer.cs">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameState.cs" />
     <Compile Include="EditPasswordScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditPasswordScreen.Designer.cs">
       <DependentUpon>EditPasswordScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameState.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SingleGameScreen.cs">
       <SubType>Form</SubType>
@@ -123,11 +124,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistryScreen.resx">
       <DependentUpon>RegistryScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,32 +145,84 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="keys\pub.txt" />
-    <None Include="Resources\Fruits8.png" />
-    <None Include="Resources\Fruits7.png" />
-    <None Include="Resources\Fruits6.png" />
-    <None Include="Resources\Fruits5.png" />
-    <None Include="Resources\Fruits4.png" />
-    <None Include="Resources\Fruits3.png" />
-    <None Include="Resources\Fruits2.png" />
-    <None Include="Resources\Fruits1.png" />
-    <None Include="Resources\SuperHero8.png" />
-    <None Include="Resources\SuperHero7.png" />
-    <None Include="Resources\SuperHero6.png" />
-    <None Include="Resources\SuperHero5.png" />
-    <None Include="Resources\SuperHero4.png" />
-    <None Include="Resources\SuperHero3.png" />
-    <None Include="Resources\SuperHero2.png" />
-    <None Include="Resources\SuperHero1.png" />
-    <None Include="Resources\Vacation8.png" />
-    <None Include="Resources\Vacation7.png" />
-    <None Include="Resources\Vacation6.png" />
-    <None Include="Resources\Vacation5.png" />
-    <None Include="Resources\Vacation4.png" />
-    <None Include="Resources\Vacation3.png" />
-    <None Include="Resources\Vacation2.png" />
-    <None Include="Resources\Vacation1.png" />
-    <None Include="Resources\question.jpg" />
-    <None Include="Resources\icon.ico" />
+    <Content Include="Resources\Fruits1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fruits8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SuperHero1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Vacation1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\question.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

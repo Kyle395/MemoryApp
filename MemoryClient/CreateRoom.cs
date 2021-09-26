@@ -41,8 +41,16 @@ namespace MemoryClient
             }
             else write("crm " + isPrivate.Checked.ToString() + " ");
 
-
-            MessageBox.Show("Room created with id: " + read());
+            string sData = read();
+            string [] logData  = CheckMessage(sData);
+            if (logData[0] == "error")
+            {
+                MessageBox.Show("You can create only 1 room");
+            }
+            else
+            {
+                MessageBox.Show("Room created with id: " + sData);
+            }
             this.Close();
         }
 

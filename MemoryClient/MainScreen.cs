@@ -154,5 +154,17 @@ namespace MemoryClient
             EditPasswordScreen editPassword = new EditPasswordScreen(Client, username);
             editPassword.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            write("delacc " + username + " " + Microsoft.VisualBasic.Interaction.InputBox("Confirm your password", "unregister", "password"));
+            if (CommProtocol.read() == "ok")
+            {
+                this.Hide();
+                LoginScreen loginScreen = new LoginScreen();
+                loginScreen.Show();
+            }
+            else MessageBox.Show("wrong credentials");
+        }
     }
 }

@@ -47,9 +47,9 @@ namespace MemoryClient
             {
                 MessageBox.Show("You can create only 1 room");
             }
-            else
+            else if(logData[0]=="crm")
             {
-                MessageBox.Show("Room created with id: " + sData);
+                MessageBox.Show("Room created with id: " + logData[1].ToString());
             }
             this.Close();
         }

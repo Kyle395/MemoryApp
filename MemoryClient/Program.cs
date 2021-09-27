@@ -18,7 +18,7 @@ namespace MemoryClient
                 Application.Run(new LoginScreen());
             }
             catch(Exception e)
-            { MessageBox.Show("Something went wrong"); }
+            {}
         }
     }
 }

@@ -22,20 +22,22 @@ namespace MemoryClient
             write("ref");
             string[] data = CheckMessage(read());
 
+            if (data[0].ToString() == "ref") { 
 
-            int x = 0;
-            int numberOfRows = int.Parse(data[x++]);
+                int x = 1;
+                int numberOfRows = int.Parse(data[x++]);
 
-            if (numberOfRows != 0)
-            {
-                this.dataGridView1.RowCount = numberOfRows;
-            }
-
-            for (int i = 0; i < numberOfRows; i++)
-            {
-                for (int j = 0; j < 4; j++)
+                if (numberOfRows != 0)
                 {
-                    this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
+                    this.dataGridView1.RowCount = numberOfRows;
+                }
+
+                for (int i = 0; i < numberOfRows; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        this.dataGridView1.Rows[i].Cells[j].Value = data[x++];
+                    }
                 }
             }
         }
@@ -109,6 +111,10 @@ namespace MemoryClient
                         {
                             MessageBox.Show("Selected room is full");
                         }
+                        else if (msg == "begun")
+                        {
+                            MessageBox.Show("Can not join the game that has already started");
+                        }
                     }
                     else
                     {
@@ -131,6 +137,10 @@ namespace MemoryClient
                         else if (msg == "error full")
                         {
                             MessageBox.Show("Selected room is full");
+                        }
+                        else if (msg == "begun")
+                        {
+                            MessageBox.Show("Can not join the game that has already started");
                         }
                         else MessageBox.Show(msg);
                     }

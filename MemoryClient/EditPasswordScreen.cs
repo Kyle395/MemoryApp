@@ -27,7 +27,7 @@ namespace MemoryClient
         }
         private void confirmBtn_Click(object sender, EventArgs e)
         {
-            if (txtPass1.Text==txtPass2.Text && txtPass1.Text.Length < 15)
+            if (txtPass1.Text==txtPass2.Text && txtPass1.Text.Length < 15 && txtPass1.Text.Length >= 5)
             {
                 write("chngpass "+ username +" "+ txtPass1.Text);
                 string message = read();
@@ -41,9 +41,17 @@ namespace MemoryClient
                     MessageBox.Show("unknown error");
                 }
             }
-            if(txtPass1.Text != txtPass2.Text)
+            else if(txtPass1.Text != txtPass2.Text)
             {
-                MessageBox.Show("Passwords don't match each other");
+                MessageBox.Show("Passwords don't match");
+            }
+            else if(txtPass1.Text.Length < 5)
+            {
+                MessageBox.Show("New password is too short!");
+            }
+            else if(txtPass1.Text.Length >= 15)
+            {
+                MessageBox.Show("New password is too long!");
             }
         }
 

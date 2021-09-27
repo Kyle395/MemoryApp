@@ -162,9 +162,9 @@ namespace MemoryClient
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(348, 17);
+            this.button1.Location = new System.Drawing.Point(312, 281);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 24);
+            this.button1.Size = new System.Drawing.Size(107, 31);
             this.button1.TabIndex = 11;
             this.button1.Text = "Edit Password";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,11 +172,12 @@ namespace MemoryClient
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(486, 18);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(425, 281);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(112, 31);
             this.button3.TabIndex = 12;
-            this.button3.Text = "button3";
+            this.button3.Text = "Delete account";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

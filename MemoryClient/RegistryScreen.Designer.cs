@@ -80,9 +80,9 @@ namespace MemoryClient
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(68, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 13);
+            this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Repeat Password: ";
+            this.label3.Text = "Repeat password: ";
             // 
             // textBoxPass2
             // 

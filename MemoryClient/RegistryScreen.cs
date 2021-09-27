@@ -35,7 +35,7 @@ namespace MemoryClient
 
         private void regBtn_Click(object sender, EventArgs e)
         {
-            if (textBoxPass.Text == textBoxPass2.Text && textBoxPass.Text.Length<15)
+            if (textBoxPass.Text == textBoxPass2.Text && textBoxPass.Text.Length < 15 && textBoxPass.Text.Length >= 5) 
             {
                 write("reg " + texBoxLogin.Text + " " + textBoxPass.Text);
                 string msg = read();

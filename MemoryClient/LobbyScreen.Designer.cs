@@ -206,7 +206,7 @@ namespace MemoryClient
             // 
             this.txtRoomId.AutoSize = true;
             this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomId.Location = new System.Drawing.Point(669, 66);
+            this.txtRoomId.Location = new System.Drawing.Point(668, 61);
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(0, 20);
             this.txtRoomId.TabIndex = 54;
@@ -401,9 +401,10 @@ namespace MemoryClient
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(554, 378);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 20);
+            this.label3.Size = new System.Drawing.Size(172, 20);
             this.label3.TabIndex = 58;
-            this.label3.Text = "Chose your deck skin:";
+            this.label3.Text = "Choose your deck skin:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // LobbyScreen
             // 

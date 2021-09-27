@@ -263,9 +263,9 @@ namespace MemoryClient
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(480, 327);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 20);
+            this.label3.Size = new System.Drawing.Size(172, 20);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Chose your deck skin:";
+            this.label3.Text = "Choose your deck skin:";
             // 
             // comboBox1
             // 

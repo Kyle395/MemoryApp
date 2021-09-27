@@ -103,7 +103,7 @@ namespace MemoryClient
             this.clsBtn.Name = "clsBtn";
             this.clsBtn.Size = new System.Drawing.Size(81, 31);
             this.clsBtn.TabIndex = 4;
-            this.clsBtn.Text = "Close App";
+            this.clsBtn.Text = "Close app";
             this.clsBtn.UseVisualStyleBackColor = true;
             this.clsBtn.Click += new System.EventHandler(this.clsBtn_Click);
             // 
@@ -114,7 +114,7 @@ namespace MemoryClient
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(138, 49);
             this.refreshBtn.TabIndex = 6;
-            this.refreshBtn.Text = "Refresh Available Rooms";
+            this.refreshBtn.Text = "Refresh available rooms";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
@@ -166,7 +166,7 @@ namespace MemoryClient
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 31);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Edit Password";
+            this.button1.Text = "Edit password";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

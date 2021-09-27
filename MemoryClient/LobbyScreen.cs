@@ -20,12 +20,19 @@ namespace MemoryClient
         MainScreen mainScreen;
         public LobbyScreen(MainScreen mainScreen, string username, string RoomId)
         {
-            this.RoomId = RoomId;
-            this.username = username;
-            this.mainScreen = mainScreen;
-            InitializeComponent();
-            table1.RowHeadersVisible = false;
-            comboBox1.Text = "Super Hero";
+            try
+            {
+                this.RoomId = RoomId;
+                this.username = username;
+                this.mainScreen = mainScreen;
+                InitializeComponent();
+                table1.RowHeadersVisible = false;
+                comboBox1.Text = "Super Hero";
+            }
+            catch(Exception d)
+            {
+                MessageBox.Show(d.ToString());
+            }
         }
         private PictureBox[] pictureBoxes
         {
@@ -133,7 +140,11 @@ namespace MemoryClient
         {
             if (gs.activePlayer != -1)
             {
-                txtNickname.Text = gs.playerOrder[gs.activePlayer];
+                try
+                {
+                    txtNickname.Text = gs.playerOrder[gs.activePlayer];
+                }
+                catch (Exception d) { }
             }
             if (gs.playerOrder.Count != 0)
             {
@@ -147,22 +158,29 @@ namespace MemoryClient
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.connected;
                 table1.Rows[i].Cells[j++].Value = gs.players.ElementAt(i).Value.score;
             }
-            if (gs.winners.Count > 0)
+            if (gs.winners.Count > 1)
             {
-
-
                 string winners = "";// = String.Join(", ", gs.winners);
                 for (int i = 0; i < gs.winners.Count; i++)
                 {
+                    MessageBox.Show(i.ToString());
+                    if (i == gs.winners.Count-1)
+                    {
+                        winners += gs.winners[i].ToString() + "!";
+                        break;
+                    }
                     winners += gs.winners[i].ToString() + ", ";
                 }
 
-
-                if (winners != previousWinnerString)
-                {
-                    testowyLabel.Text = "And the winner is: " + winners;
-                    previousWinnerString = winners;
-                }
+                testowyLabel.Text= "And the winners are: " + winners;
+            }
+            else if (gs.winners.Count == 1)
+            {
+                testowyLabel.Text = "And the winner is: " + gs.winners[0].ToString();
+            }
+            if (gs.begun)
+            { 
+                testowyLabel.Text = ""; 
             }
             checkBox1.CheckState = gs.players[username].ready ? CheckState.Checked : CheckState.Unchecked;
             SetImages();

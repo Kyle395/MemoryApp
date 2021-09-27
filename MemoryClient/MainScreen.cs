@@ -99,7 +99,7 @@ namespace MemoryClient
                         {
                             this.Hide();
                             LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
-                            lobbyScreen.ShowDialog();
+                            lobbyScreen.Show();
                         }
                         else if (msg == "error wrong_password")
                         {
@@ -117,9 +117,16 @@ namespace MemoryClient
 
                         if (msg == "ok")
                         {
-                            this.Hide();
-                            LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
-                            lobbyScreen.ShowDialog();
+                            try
+                            {
+                                this.Hide();
+                                LobbyScreen lobbyScreen = new LobbyScreen(this, username, cellValue);
+                                lobbyScreen.ShowDialog();
+                            }
+                            catch (Exception ex) 
+                            { 
+                                MessageBox.Show(ex.ToString());
+                            }
                         }
                         else if (msg == "error full")
                         {

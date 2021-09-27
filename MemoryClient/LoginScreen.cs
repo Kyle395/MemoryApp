@@ -26,7 +26,7 @@ namespace MemoryClient
             try
             {
                 client = new TcpClient();
-                client.Connect("127.0.0.1", 8080);
+                client.Connect("80.94.30.252", 8080);
                 stream = client.GetStream();
                 CommProtocol.init(stream);
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -106,7 +107,6 @@ namespace MemoryClient
             {
                 return "";
             }
-
             using (StreamReader sr = new StreamReader(stream, Encoding.UTF8, false, 1024, true))
             {
                 try

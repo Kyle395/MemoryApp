@@ -261,7 +261,7 @@ namespace MemoryClient
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(480, 327);
+            this.label3.Location = new System.Drawing.Point(471, 326);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 20);
             this.label3.TabIndex = 60;
@@ -280,6 +280,7 @@ namespace MemoryClient
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 59;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // SingleGameScreen
             // 
